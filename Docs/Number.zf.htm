@@ -1,0 +1,136 @@
+<html>
+<head>
+<title>WSDOT Custom Scripting:  Number.zf Method</title>
+<link rel="stylesheet" type="text/css" href="wsdot_scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>WSDOT Custom Scripting for Hyperion</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>Number.zf Method</h4>
+
+			Pads the left of a number with zeros.<br />
+
+			<pre style="background-color: eef;
+				  border-bottom-style: solid;
+				  border-bottom-color: ccc;
+				  border-bottom-width: 1px;
+				  padding-left: 50px; "><i><b>object</b></i>.<b>zf</b> (<i>NumDigits</i>)</pre>
+
+			<br />
+			<h4>Arguments</h4>
+
+			<dl>
+			<dt>object</dt>
+			<dd>Required. Always the name of a <b>Number</b> object.</dd>
+			<br /><br />
+
+			<dt>NumDigits</dt>
+			<dd>Required. The minimum number of characters in the output number.</dd>
+			<br /><br />
+			</dl>
+			
+			
+			<br />
+			<h4>Return Value</h4>
+			The <b>Number.zf</b> method returns the following values:
+			
+			<table width="100%">
+				<tr>
+					<td class="tableHead">If</td>
+					<td class="tableHead"><b>Number.zf</b> returns</td>
+				</tr>
+				<tr>
+					<td class="tableData"><i>NumDigits</i> is smaller than the length of the string 
+					resulting from rounding the number to the nearest integer 
+					(Math.round(<i>object</i>).toString().length)</td>
+					<td class="tableData">A string containing the original number rounded to the nearest integer.</td>
+				</tr>
+				<tr>
+					<td class="tableData"><i>NumDigits</i> is larger than the length of the string 
+					resulting from rounding the number to the nearest integer</td>
+					<td class="tableData">A string containing the original number rounded to the 
+					nearest integer with enough zeros to make the string <i>NumDigits</i> characters wide.</td>
+				</tr>
+				<tr>
+					<td class="tableData"><i>NumDigits</i> is not a positive integer</td>
+					<td class="tableData">"Input Error"</td>
+				</tr>
+			</table>
+			
+			
+			<br />
+			<h4>Remarks</h4>
+			The following example illustrates the use of the <b>Number.zf</b> method.
+			<br /><br />
+			
+			<pre>var d = new Date();
+var sDate = new String();
+
+sDate = (d.getMonth() + 1).zf(2);
+sDate += "/" + d.getDate().zf(2);
+sDate += "/" + d.getFullYear();
+
+Alert(sDate);
+//	displays "<script language="JavaScript">
+String.prototype.reverse = function () {
+  for( var oStr = "", x = this.length - 1, oTmp; oTmp = this.charAt(x); x-- ) {
+    oStr += oTmp;
+  }
+  return oStr;
+};
+
+Number.prototype.zf = function (NumDigits) {
+//	returns a [NumDigits]-length string containing
+//	an integer with leading zeros.
+	var strTemp = Math.round(this).toString().reverse();
+	while (NumDigits > strTemp.length) {
+		strTemp += "0";
+	}
+	
+	return(strTemp.reverse());
+}
+var d = new Date();
+var sDate = new String();
+
+sDate = (d.getMonth() + 1).zf(2);
+sDate += "/" + d.getDate().zf(2);
+sDate += "/" + d.getFullYear();
+
+document.write(sDate);
+</script>" in an Alert box</pre>
+			
+			<!-- <br />
+			<br />
+			<h4>Applies To:</h4>
+			<a href="DictionaryObject.htm"><b>Dictionary Object</b></a>
+
+
+			<br /><br /> -->
+			<br /><br />
+			<h4>Requirements</h4>
+			The WSDOT Custom Scripts from the script repository must be loaded into the document.<br />
+			<a href="String.reverse.htm">String.reverse()</a>
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

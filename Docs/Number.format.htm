@@ -1,0 +1,122 @@
+<html>
+<head>
+<title>IR Framework:  Number.format Method</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>Number.format Method</h4>
+			
+			Formats a <b>number</b> according to a specific, user-defined format.<br />
+			
+			<pre style="background-color: eef;
+				  border-bottom-style: solid;
+				  border-bottom-color: ccc;
+				  border-bottom-width: 1px;
+				  padding-left: 50px; "><i><b>object</b></i>.<b>format</b> ([<i>NumDigitsAfterDecimal</i>[, <i>IncludeLeadingDigit</i>[, <i>UseParensForNegativeNumbers</i>[, <i>GroupDigits</i>]]]])</pre>
+			
+			<br />
+			<h4>Arguments</h4>
+			
+			<dl>
+			<dt>object</dt>
+			<dd>Required. Always the name of a <b>Number</b> object.</dd>
+			<br /><br />
+			
+			<dt>NumDigitsAfterDecimal</dt>
+			<dd>Optional. Numeric value indicating how many places to the right of the decimal 
+			are displayed. If omitted, the original number of places to the right of the 
+			decimal is used.</dd>
+			<br /><br />
+			
+			<dt>IncludeLeadingDigit</dt>
+			<dd>Optional. Boolean value that indicates whether or not a leading zero is 
+			displayed for fractional values.  Default is false.</dd>
+			<br /><br />
+			
+			<dt>UseParensForNegativeNumbers</dt>
+			<dd>Optional. Boolean value that indicates whether or not to place negative 
+			values within parentheses.  Default is false.</dd>
+			<br /><br />
+			
+			<dt>GroupDigits</dt>
+			<dd>Optional. Boolean value that indicates whether or not numbers are grouped. Default is false.</dd>
+			<br /><br />
+			</dl>
+			
+			
+			<!-- <br />
+			<h4>Settings</h4>
+			The IncludeLeadingDigit, UseParensForNegativeNumbers, and GroupDigits arguments have the following settings:
+			
+			<table width="100%">
+				<tr>
+					<td class="tableHead">Value</td>
+					<td class="tableHead">Description</td>
+				</tr>
+				<tr>
+					<td class="tableData">-1</td>
+					<td class="tableData">true</td>
+				</tr>
+				<tr>
+					<td class="tableData">0</td>
+					<td class="tableData">false</td>
+				</tr>
+				<tr>
+					<td class="tableData">-2</td>
+					<td class="tableData">Use the setting from the computer's regional settings.</td>
+				</tr>
+			</table> -->
+			
+			
+			<br />
+			<h4>Return Value</h4>
+			The <b>Number.format()</b> method returns a string containing the number in the specified format.
+			
+			
+			<br /><br /><br />
+			<h4>Remarks</h4>
+			The following example illustrates the use of the <b>Number.format</b> method.
+			<br /><br />
+			
+			<pre>function FormatNumberDemo () {
+	var MyAngle, MySecant = new Number();
+	MyAngle = 1.3;	//	Define angle in radians.
+	MySecant = 1 / Math.cos(MyAngle);	//	Calculate secant.
+	return(MySecant.format(4));	//	Format MySecant to four decimal places.
+}</pre>
+			
+			<!-- <br />
+			<br />
+			<h4>Applies To:</h4>
+			<a href="DictionaryObject.htm"><b>Dictionary Object</b></a>
+
+
+			<br /><br /> -->
+			<br /><br />
+			<h4>Requirements</h4>
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>WSDOT Custom Scripting:  GlobalStartup Object</title>
+<link rel="stylesheet" type="text/css" href="wsdot_scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>WSDOT Custom Scripting for Hyperion</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>GlobalStartup Object</h4>
+			
+			Object that provides basic information about the status of the scripting repository 
+			and the ability for the repository owner to run arbitrary code against all 
+			Hyperion documents that use the scripting repository.  <b>GlobalStartup</b> object 
+			methods and properties are available for use in scripts or in the <b>Execution</b> window.<br />
+			
+			<br />
+			<h4>Remarks</h4>
+			The <b>GlobalStartup</b> object is a member of the ActiveDocument.
+			<br /><br />
+			The following code illustrates the use of the <b>GlobalStartup</b> object:
+			
+			<br />
+			<br />
+			
+			<pre>//	write the last update date of the current message to the console
+Console.Writeln(wsdot_GlobalStartup.Updated);
+//	write the current message to the console
+Console.Writeln(wsdot_GlobalStartup.getMsg());
+//	open the WSDOT Hyperion Custom Script help in Internet Explorer
+wsdot_GlobalStartup.getHelp();</pre>
+			
+			<br />
+			<br />
+			<h4>Methods</h4>
+			<a href="GlobalStartup.getMsg.htm">getMsg Method</a> | 
+			<a href="GlobalStartup.getHelp.htm">getHelp Method</a>
+			
+			
+			<br /><br />
+			<br /><br />
+			<h4>Properties</h4>
+			<a href="GlobalStartup.Updated.htm">Updated Property</a>
+			
+			
+			<br /><br />
+			<br /><br />
+			<h4>Requirements</h4>
+			The WSDOT Custom Scripts from the script repository must be loaded into the document.
+			
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

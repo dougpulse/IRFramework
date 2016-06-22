@@ -1,0 +1,104 @@
+<html>
+<head>
+<title>WSDOT Custom Scripting:  ProgressBar.Top Property</title>
+<link rel="stylesheet" type="text/css" href="wsdot_scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>WSDOT Custom Scripting for Hyperion</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>ProgressBar.Top Method</h4>
+			
+			Gets or sets the top location of the <b>ProgressBar</b> object.<br />
+			
+			<pre style="background-color: eef; 
+				  border-bottom-style: solid; 
+				  border-bottom-color: ccc; 
+				  border-bottom-width: 1px; 
+				  padding-left: 50px; "><i><b>object</b></i>.<b>Top</b> ([<i>value</i>])</pre>
+			
+			<br />
+			<h4>Arguments</h4>
+			
+			<dl>
+			<dt>object</dt>
+			<dd>Required. Always the name of a <b>ProgressBar</b> object.</dd>
+			<br /><br />
+			
+			<dt>value</dt>
+			<dd>Optional. The value to which to set the property.</dd>
+			<br /><br />
+			</dl>
+			
+			
+			<br />
+			<h4>Return Value</h4>
+			The ProgressBar.Top property returns the current number of pixels from the 
+			top edge of the dashboard to the top edge of the <b>ProgressBar</b>.<br />
+			
+			<br />
+			<br />
+			<br />
+			<h4>Remarks</h4>
+			When attemting to set the property value, it is good to check the 
+			return value to ensure that the value was set.
+			<br /><br />
+			The following example illustrates the use of the <b>Top</b> property.
+			<br /><br />
+			
+			<pre>var dash = ActiveDocument.Sections["Dashboard"];
+dash.pb0001 = new wsdot_ProgressBar(dash);
+with (dash.pb0001) {
+	Left(300);
+	<b>var iTop = Top(200);
+	if (iTop == 200) {
+		// success
+	}</b>
+	Height(32);
+	Width(160);
+	Value(0);
+	MaxValue(100);
+	Show();
+	for (var i = 1; i <= dash.pb0001.MaxValue() / 2; i++) {
+		var a = (new Date()).valueOf();
+		while ((new Date()).valueOf() - a < 10) {
+			DoEvents();
+			DoEvents();
+		}
+		dash.pb0001.Value(i * 2);
+	}
+}</pre>
+			
+			<br />
+			<br />
+			<h4>Applies To:</h4>
+			<a href="ProgressBarObject.htm"><b>ProgressBar Object</b></a>
+
+			
+			<br /><br />
+			<br /><br />
+			<h4>Requirements</h4>
+			The WSDOT Custom Scripts from the script repository must be loaded into the document.
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<html>
+<head>
+<title>IR Framework:  PartitionFilter.FilterItem Property</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>PartitionFilter.FilterItem Property</h4>
+			
+			Gets or sets the FilterItem property of the <b>PartitionFilter</b> object.<br />
+			
+			<pre style="background-color: eef; 
+				  border-bottom-style: solid; 
+				  border-bottom-color: ccc; 
+				  border-bottom-width: 1px; 
+				  padding-left: 50px; "><i><b>object</b></i>.<b>FilterItem</b> ([<i>value</i>])</pre>
+			
+			<br />
+			<h4>Arguments</h4>
+			
+			<dl>
+			<dt>object</dt>
+			<dd>Required. Always the name of a <b>PartitionFilter</b> object.</dd>
+			<br /><br />
+			
+			<dt>value</dt>
+			<dd>Optional. The <b>Limit</b> object in <b>QueryTofilter</b> to use to filter <b>QueryToFilter</b> by partition.</dd>
+			<br /><br />
+			</dl>
+			
+			
+			<br />
+			<h4>Return Value</h4>
+			The PartitionFilter.FilterItem property returns the <b>Limit</b> 
+			object to which the partition values are added.<br />
+			
+			<br />
+			<br />
+			<br />
+			<h4>Remarks</h4>
+			When attempting to set the property value, it is good to check the 
+			return value to ensure that the value was set.
+			<br /><br />
+			The following example illustrates the use of the <b>FilterItem</b> property.
+			<br /><br />
+			
+			<pre>try {
+	ActiveDocument.pf1 = new ActiveDocument.PartitionFilter();
+	Console.Writeln(ActiveDocument.pf1.toString());	<span class="comment">//	outputs "[Object][PartitionFilter]" to the Console</span>
+	var vTest = ActiveDocument.pf1.QueryToFilter(ActiveDocument.Sections["Q-DataToReport"]);
+	if (typeof vTest == "undefined") throw new Error("Invalid Query:  Q-DataToReport");
+	<b>vTest = ActiveDocument.pf1.FilterItem(ActiveDocument.pf1.QueryToFilter().Limits["Fiscalbienniumid"]);</b>
+	if (typeof vTest == "undefined") throw new Error("Invalid Limit:  Fiscalbienniumid");
+	vTest = ActiveDocument.pf1.PartitionValuesResult(ActiveDocument.Sections["q-MyPartitionValues"]);
+	if (typeof vTest == "undefined") throw new Error("Invalid Query:  q-MyPartitionValues");
+	vTest = ActiveDocument.pf1.PartitionValuesColumn(ActiveDocument.pf1.PartitionValuesResult().Limits["Begin Bien Year"]);
+	if (typeof vTest == "undefined") throw new Error("Invalid Limit:  Begin Bien Year");
+	
+	ActiveDocument.pf1.SetPartition();	<span class="comment">//	use the data in the PartitionFilter object to set the limit in QueryToFilter</span>
+}
+catch (e) {
+	Console.Writeln(e.toString());
+}</pre>
+			
+			<br />
+			<br />
+			<h4>Applies To:</h4>
+			<a href="PartitionFilterObject.htm"><b>PartitionFilter Object</b></a>
+
+			
+			<br /><br />
+			<br /><br />
+			<h4>Requirements</h4>
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+</body>
+</html>

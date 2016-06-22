@@ -1,0 +1,86 @@
+<html>
+<head>
+<title>IR Framework:  Limit.getSelection Method</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>Limit.getSelection Method</h4>
+			
+			Puts the list of SelectedValues from a Limit into an array.<br />
+			
+			<pre style="background-color: eef; 
+				  border-bottom-style: solid; 
+				  border-bottom-color: ccc; 
+				  border-bottom-width: 1px; 
+				  padding-left: 50px; ">[<i>object</i>.]<b>getSelection</b> ()</pre>
+			
+			
+			<br />
+			<h4>Arguments</h4>
+			
+			<dl>
+			<dt>object</dt>
+			<dd>Required.  A <b>Limit</b> object.</dd>
+			</dl>
+			
+			
+			<br />
+			<h4>Return Value</h4>
+			The getSelection function returns an array of zero or more elements containing the string value(s) of the Items in <i>object</i>.SelectedValues.
+			
+			
+			<br />
+			<br />
+			<h4>Remarks</h4>
+			The following example uses <b>Limit.getSelection Method</b> to determine how many values are  
+			in a ListBox:
+			<br />
+			<br />
+			
+			<pre>
+<span class="comment">//	Use getSelection to get the list of SelectedValues from a limit
+//	then use setSelection to set a selection from the array</span>
+if (ActiveDocument.QueryInProcess == "Q-Expenditures") {
+<b>	var arr = ActiveDocument.Sections["Q-Budget"].Limits["Region"].getSelection();</b>
+	var oTo = ActiveDocument.Sections["Q-Expenditures"].Limits["Region"];
+	oTo.setSelection(arr);
+}
+
+<span class="comment">//	Use setSelection to set a selection directly from another Limit</span>
+if (ActiveDocument.QueryInProcess == "Q-Expenditures") {
+	var oFrom = ActiveDocument.Sections["Q-Budget"].Limits["Region"];
+	var oTo = ActiveDocument.Sections["Q-Expenditures"].Limits["Region"];
+	oTo.setSelection(oFrom);
+}
+</pre>
+			
+			<br />
+			<h4>Requirements</h4>
+			ActiveDocument.loadObjectMethods() must be run after the limit 
+			object is created and before this object method is used.
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

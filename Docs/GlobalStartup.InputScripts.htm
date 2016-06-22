@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>WSDOT Custom Scripting:  GlobalStartup.InputScripts Method</title>
+<link rel="stylesheet" type="text/css" href="wsdot_scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>WSDOT Custom Scripting for Hyperion</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>GlobalStartup.InputScripts Method</h4>
+			
+			The <b>InputScripts</b> method loads the contents a text file into the objects in the <b>ActiveDocument</b>.<br />
+			
+			<pre style="background-color: eef; 
+				  border-bottom-style: solid; 
+				  border-bottom-color: ccc; 
+				  border-bottom-width: 1px; 
+				  padding-left: 50px; "><i><b>object</b></i>.<b>InputScripts</b> (InputFileName)</pre>
+			
+			<br />
+			<h4>Arguments</h4>
+			
+			<dl>
+			<dt>object</dt>
+			<dd>Required. Always the name of a <b>GlobalStartup</b> object.</dd>
+			<br /><br />
+			
+			<dt>InputFileName</dt>
+			<dd>Required. The path and file name of the file to read the scripts from.</dd>
+			<br /><br />
+			</dl>
+			
+			
+			<br />
+			<h4>Remarks</h4>
+			The file format is very specific.  It is best to begin by creating the file using the <a href="GlobalStartup.OutputScripts.htm"><b>OutputScripts</b></a> method.<br />
+			The following example illustrates the use of the <b>InputScripts</b> method.
+			<br /><br />
+			
+			<pre><font color="888888">//	create the name of the text file to load
+//	In this case, we make the name of the script file match the name of the
+//	Interactive Reporting file.  We also place it in the same folder.</font>
+var strTemp = ActiveDocument.Path.reverse();
+strTemp = strTemp.substr(strTemp.indexOf(".")).reverse() + "js";
+
+<font color="888888">//	load the document's scripts from the text file</font>
+ActiveDocument.wsdot_GlobalStartup.InputScripts(strTemp);</pre>
+			
+			<br />
+			<br />
+			<h4>Applies To:</h4>
+			<a href="GlobalStartupObject.htm"><b>GlobalStartup Object</b></a>
+
+			
+			<br /><br />
+			<br /><br />
+			<h4>Requirements</h4>
+			The WSDOT Custom Scripts from the script repository must be loaded into the document.
+			
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<html>
+<head>
+<title>IR Framework:  Limit.setSelection Method</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>Limit.setSelection Method</h4>
+			
+			Sets the list SelectedValues for a Limit.<br />
+			
+			<pre style="background-color: eef; 
+				  border-bottom-style: solid; 
+				  border-bottom-color: ccc; 
+				  border-bottom-width: 1px; 
+				  padding-left: 50px; ">[<i>object</i>.]<b>setSelection</b> (<i>valList</i>)</pre>
+			
+			
+			<br />
+			<h4>Arguments</h4>
+			
+			<dl>
+			<dt>object</dt>
+			<dd>Required.  A <b>Limit</b> object.</dd>
+			<br /><br />
+			
+			<dt>valList</dt>
+			<dd>Required.  An array or a <b>Limit</b> containing the value(s) to set.</dd>
+			</dl>
+			
+			
+			<br />
+			<br />
+			<h4>Remarks</h4>
+			If <i>valList</i> is a <b>Limit</b> object, the selection is copied.<br />
+			The following example uses <b>Limit.setSelection Method</b> to create the values list for a ListBox:
+			<br />
+			<br />
+			
+			<pre>
+<span class="comment">//	Use getSelection to get the list of SelectedValues from a limit
+//	then use setSelection to set a selection from the array</span>
+if (ActiveDocument.QueryInProcess == "Q-Expenditures") {
+	var arr = ActiveDocument.Sections["Q-Budget"].Limits["Region"].getSelection();
+	var oTo = ActiveDocument.Sections["Q-Expenditures"].Limits["Region"];
+<b>	oTo.setSelection(arr);</b>
+}
+
+<span class="comment">//	Use setSelection to set a selection directly from another Limit</span>
+if (ActiveDocument.QueryInProcess == "Q-Expenditures") {
+	var oFrom = ActiveDocument.Sections["Q-Budget"].Limits["Region"];
+	var oTo = ActiveDocument.Sections["Q-Expenditures"].Limits["Region"];
+<b>	oTo.setSelection(oFrom);</b>
+}
+</pre>
+			
+			<br />
+			<h4>Requirements</h4>
+			ActiveDocument.loadObjectMethods() must be called after the limit 
+			object is created and before this object method is used.<br />
+			If valList is a column object, ActiveDocument.loadObjectMethods() must be called after the column is created.
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

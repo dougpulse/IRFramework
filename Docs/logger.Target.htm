@@ -1,0 +1,117 @@
+<html>
+<head>
+<title>IR Framework:  logger.Target Property</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>logger.Target Property</h4>
+			
+			Sets or returns target for a <b>logger</b> object. Read/write.<br />
+			
+			<pre style="background-color: eef; 
+				  border-bottom-style: solid; 
+				  border-bottom-color: ccc; 
+				  border-bottom-width: 1px; 
+				  padding-left: 50px; "><i><b>object</b></i>.<b>Target</b> (<i>target</i>)</pre>
+			
+			<br />
+			<h4>Arguments</h4>
+			
+			<dl>
+			<dt>object</dt>
+			<dd>Required. Always the name of a <b>logger</b> object.</dd>
+			<br /><br />
+			
+			<dt>target</dt>
+			<dd>Optional. If provided, <i>target</i> is a keyword or the path and name of the 
+			file to which the logger will write.</dd>
+			<br /><br />
+			</dl>
+			
+			
+			<br />
+			<h4>Remarks</h4>
+			Setting <i>target</i> to these values will cause the <b>logger</b> 
+			to write to the following locations:
+			
+			<table width="100%">
+				<tr>
+					<td class="tableHead"><i>target</i> is...</td>
+					<td class="tableHead"><b>logger</b> writes to...</td>
+				</tr>
+				<tr>
+					<td class="tableData">"alert"</td>
+					<td class="tableData">an Alert box</td>
+				</tr>
+				<tr>
+					<td class="tableData">"console"</td>
+					<td class="tableData">the Console window</td>
+				</tr>
+				<tr>
+					<td class="tableData">a file name (without a path)</td>
+					<td class="tableData">My Documents\<i>target</i></td>
+				</tr>
+				<tr>
+					<td class="tableData">a path and file name</td>
+					<td class="tableData">the specified file</td>
+				</tr>
+			</table>
+			
+			<br /><br />
+			
+			The following example illustrates the use of the <b>Level</b> property.
+			<br /><br />
+			
+			<pre><font color="888888">//	create a logger and set the level to DEBUG and write entries to the Console window</font>
+var myLogger = new Application.logger();
+myLogger.Level(myLogger.LEVEL.DEBUG);
+
+myLogger.trace("trace");	<font color="888888">//	TRACE is lower than DEBUG, so this won't do anything</font>
+myLogger.debug("debug");
+myLogger.error("error");
+
+
+<font color="888888">//	make the logger write entries to My Documents\mylog.log</font>
+<font color="888888">//	make the logger write entries to My Documents\mylog.log</font>
+<b>myLogger.Target("mylog.log");</b>
+
+myLogger.trace("trace");	<font color="888888">//	TRACE is lower than DEBUG, so this won't do anything</font>
+myLogger.debug("debug");
+myLogger.error("error");</pre>
+			
+			<br />
+			<br />
+			<h4>Applies To:</h4>
+			<a href="loggerObject.htm"><b>logger Object</b></a>
+
+			
+			<br /><br />
+			<br /><br />
+			<h4>Requirements</h4>
+			
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

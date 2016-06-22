@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>IR Framework:  PartitionFilter Example</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>PartitionFilter Example</h4>
+			
+			<p>Here is an example of how to use the PartitionFilter object:</p>
+
+<p>I have created a query from the Financial Data Mart.  I know that the Financial Data Mart is partitioned on the Fiscalbienniumid field.  If I filter on that field on whatever fact table I'm using, in this case the Expenditure Summary Fact, the query will run faster.</p>
+<p><img src="img/PartitionFilter01.png" /></p>
+
+<p>The first step to take advantage of database partitioning is to add the partition field as a filter.  So I'll add the Fiscalbienniumid column from the Expenditure Summary Fact table as a filter.  Now let's look at how to hook this up with the PartitionFilter object so that we can get the benefits of partitioning automatically without having to know what the values are in the partition field.</p>
+
+<p>First, we'll need to import the script library and load all of the object methods that it provides.</p>
+<pre>sLibraryFile = "C:\\DMSVN\\SharedResources\\Reporting Tool\\Trunk\\HyperionScripts.js";
+eval( (new JOOLEObject("Scripting.FileSystemObject")).OpenTextFile(-2, 1, sLibraryFile).ReadAll() );
+ActiveDocument.loadObjectMethods();</pre>
+
+<p>Next, we need to create a PartitionFilter object.  The name of the query I want to filter is "Q-DataToReport".</p>
+<pre>ActiveDocument.pf1 = new ActiveDocument.PartitionFilter(ActiveDocument.Sections["Q-DataToReport"]);</pre>
+
+<p>This can be specified at the time the object is instantiated, or later by using the QueryToFilter method, like this:</p>
+<pre>ActiveDocument.pf1.QueryToFilter(ActiveDocument.Sections["Q-DataToReport"]);</pre>
+
+<p>If I use PartitionFilter's default names for the query, result, column, and limit objects, that's all I need to do to configure the object.</p>
+
+<p>Note:  You can inspect the return value of any of the methods of the PartitionFilter object.  The methods should return the object that they represent.  If you passed an object to the method, that's what you should get back.  If the return value is undefined, something went wrong.  See the documentation for each method for details.</p>
+
+<p>For convenience, I'll use the default object names.  If you use other names, just specify them by calling the appropriate methods, like this:
+ActiveDocument.pf1.FilterItem(ActiveDocument.pf1.QueryToFilter().Limits["myPartitionFilter"]);</p>
+
+<p>In the ActiveDocument.OnPreProcess event script, I'll add the code to actually use the partition filter.</p>
+
+<pre>if (ActiveDocument.QueryInProcess == ActiveDocument.pf1.QueryToFilter().Name) {
+	ActiveDocument.pf1.SetPartition();
+}</pre>
+
+<p>Now I have to create the query that will tell me what partition values to use.  I'll create a query named "q-PartData" with a result named "r-PartData".  For the Financial Data Mart, the Fiscalbienniumid equates to the starting year of the biennium.  So, I'll add the Fiscal Period table to the data model and put the Begin Biennium Year field on the request line.  I'll name the column PartitionId.  Now I'll add the filters that I may want to use in my main query (Q-DataToReport).  I'll process the query once to make the column appear in the result.</p>
+<p><img src="img/PartitionFilter02.png" /></p>
+
+<p>Now I'll run ActiveDocument.OnStartup() to reload the library, load the object methods, and create the PartitionFilter object using q-PartData.</p>
+
+<p>Now all I have to do is process my query.  Let's ignore Calendar Month Name and Calendar Year and select Fiscal Year = 2012, then click the Process button.  SetPartition() returns an array containing the values that were used in PartitionId, so if I output that to the console, I see that the filter was set to 2011 when the query processed.  That's the beginning year of this biennium.  If I change my filter to Calendar Year = 2011, I get 2009 and 2011.  If I change the filters to Fiscal Year = 2012 and Calendar Year = 2008, PartitionId is filtered to -1, which really quickly returns no rows.</p>
+
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>
