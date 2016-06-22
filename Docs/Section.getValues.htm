@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>IR Framework:  Section.getValues Method</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>Section.getValues Method</h4>
+			
+			The <b>getValues</b> method reads values from one column in a <b>Results</b> or <b>Table</b> into an array.<br />
+			
+			<pre style="background-color: eef; 
+				  border-bottom-style: solid; 
+				  border-bottom-color: ccc; 
+				  border-bottom-width: 1px; 
+				  padding-left: 50px; "><i><b>object</b></i>.<b>getValues</b> (<i>columnName</i>)</pre>
+			
+			<br />
+			<h4>Arguments</h4>
+			
+			<dl>
+			<dt>object</dt>
+			<dd>Required. A <b>Results</b> or <b>Table</b> object.</dd>
+			<br />
+			
+			<dt>columnName</dt>
+			<dd>Required. A string containing the name of the column from which to read the values.</dd>
+			<br />
+			</dl>
+			
+			
+			<br />
+			<h4>Remarks</h4>
+			The resulting array contains the list of values sorted alphabetically with duplicates removed.
+			
+			<br /><br />
+			
+			Example:<pre><font color="888888">//	populate a listbox control from the values in a column</font>
+var arr = ActiveDocument.Sections["R-MyResults"].getValues("myColumn");
+ActiveDocument.Sections["Dashboard"].Shapes["lstMyList"].SetList(arr);</pre>
+			
+			<br /><br />
+			<h4>Requirements</h4>
+			ActiveDocument.loadObjectMethods() must be called after the Result/Table is created.
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

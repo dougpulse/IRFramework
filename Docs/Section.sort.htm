@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>IR Framework:  Section.sort Method</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>Section.sort Method</h4>
+			
+			The <b>sort</b> method modifies the sort order of a <b>Results</b> or <b>Table</b>.<br />
+			
+			<pre style="background-color: eef; 
+				  border-bottom-style: solid; 
+				  border-bottom-color: ccc; 
+				  border-bottom-width: 1px; 
+				  padding-left: 50px; "><i><b>object</b></i>.<b>sort</b> (<i>columnName</i>, [<i>order</i>])</pre>
+			
+			<br />
+			<h4>Arguments</h4>
+			
+			<dl>
+			<dt>object</dt>
+			<dd>Required. A <b>Results</b> or <b>Table</b> object.</dd>
+			<br />
+			
+			<dt>columnName</dt>
+			<dd>Required. A string containing the name of the column on which to sort.</dd>
+			<br />
+			
+			<dt>order</dt>
+			<dd>Optional. An integer indicating the sort order for this column.
+			1 = ascending, 2 = descending.  If ommitted, the default value of 1 is used.</dd>
+			<br />
+			</dl>
+			
+			
+			<br />
+			<h4>Remarks</h4>
+			The specified column is added to beginning of the sort list.  
+			If the column is already in the sort list, it is moved to the beginning.
+			
+			<br /><br />
+			
+			Example:<pre><font color="888888">//	Change the sort of a Result to sort primarily by the specified column.</font>
+ActiveDocument.Sections["R-MyResults"].sort("myColumn");</pre>
+			
+			<br /><br />
+			<h4>Requirements</h4>
+			ActiveDocument.loadObjectMethods() must be called after the Result/Table is created.
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

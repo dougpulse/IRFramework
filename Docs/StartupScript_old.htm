@@ -1,0 +1,133 @@
+<html>
+<head>
+<title>WSDOT Custom Scripting:  Startup Script</title>
+<link rel="stylesheet" type="text/css" href="wsdot_scripts.css" />
+<script language="JavaScript">
+function CopyCode(o) {
+	txtTemp.innerText = o.innerText;
+	rngCode = txtTemp.createTextRange();
+	rngCode.execCommand("Copy");
+}
+</script>
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>WSDOT Custom Scripting for Hyperion</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>Startup Script</h4>
+			
+			Include this script in the Document.OnStartup event to use the WSDOT Hyperion Custom Scripts in a bqy file.<br />
+			<textarea id="txtTemp" style="display:none;"></textarea>
+			<div style="width: 100%; 
+					background-color: eef; 
+					border-bottom-style: solid; 
+					border-bottom-color: ccc; 
+					border-bottom-width: 2px; 
+					text-align: right; "><a style="color: 00f; cursor: hand; padding-right: 10px; font-weight: bold; " onclick="CopyCode(CodeWindow);">Copy Code</a></div>
+			<pre id="CodeWindow" 
+				style="background-color: eef; 
+				  position: absolute; ">//	hide the toolbars to provide more space for the UI
+/*
+Toolbars["Standard"].Visible = false;
+Toolbars["Formatting"].Visible = false;
+Toolbars["Sections"].Visible = false;
+Toolbars["Navigation"].Visible = false;
+Toolbars["Paging"].Visible = false;
+*/
+
+//---------------------------------------------------------------------
+//	get the scripts from the database
+//---------------------------------------------------------------------
+var appExplorer = (Application.Type == bqAppTypeDesktopClient);
+var qType;
+try {
+	qType = ActiveDocument.Sections["Q-Scripts"].Type;
+}
+catch (e) {
+	qType = -1;
+}
+
+//  only create the query if the query doesn't exist.
+if (qType == -1) {
+//  only create the connection if the document is open in Explorer.
+	if (appExplorer) {
+		var myCon, myQuery;
+		myCon = Application.CreateConnection();
+		with (myCon) {
+			Api = bqApiODBC;
+			Database = bqDatabaseMicrosoftSQLServer7;
+			HostName = "HyperionScripting";
+			SaveAs("C:\\Program Files\\Hyperion\\BIPlus\\data\\Open Catalog Extensions\\HyperionScripting.oce");
+		}
+	}
+	
+
+
+	myQuery = ActiveDocument.Sections.Add(bqQuery);
+	with (myQuery) {
+		Name = "Q-Scripts";
+		IncludeInProcessAll = false;
+		SaveResults = false;
+		Visible = false;
+		
+		with (DataModel) {
+			Connection.Open("C:\\Program Files\\Hyperion\\BIPlus\\data\\Open Catalog Extensions\\HyperionScripting.oce");
+			Connection.Connect();
+			Catalog.Refresh();
+			
+			try {
+				Topics.Add(Catalog.CatalogItems["wsdot_HyperionScriptCode"]);
+			}
+			catch (e) {
+				Alert("There was an error.");
+			}
+		}
+		Requests.Add("wsdot_HyperionScriptCode", DataModel.Topics[1].TopicItems[1].PhysicalName);
+	}
+	
+	ActiveDocument.Sections[ActiveDocument.Sections.Count].Name = "R-Scripts";
+	ActiveDocument.Sections[ActiveDocument.Sections.Count].Visible = false;
+}
+
+//  now the query exists.  process it and create the scripts
+//  Process the query
+ActiveDocument.Sections["Q-Scripts"].Process();
+//  Loop through each row in the results section and evaluate each line of code
+var results = ActiveDocument.Sections["R-Scripts"];
+var rCount = results.RowCount;
+
+for (var i = 1; i <= rCount; i++) {
+	var fctn = results.Columns["Scripttext"].GetCell(i) + results.Columns["Scripttext2"].GetCell(i);
+	//var fctn = fctn.replace(/(\"\")/gi, "\'");
+	eval(fctn);
+}
+
+//Console.Writeln(wsdot_GlobalStartup.Updated);
+//Console.Writeln(wsdot_GlobalStartup.getMsg());
+//wsdot_GlobalStartup.getHelp();
+
+</pre>
+			
+			
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

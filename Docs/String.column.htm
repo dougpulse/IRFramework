@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>IR Framework:  String.column Method</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>String.column Method</h4>
+
+			Returns a copy of the <b>string</b> formatted to fit in a column of a specific width.<br />
+
+			<pre style="background-color: eef;
+				  border-bottom-style: solid;
+				  border-bottom-color: ccc;
+				  border-bottom-width: 1px;
+				  padding-left: 50px; "><i><b>object</b></i>.<b>column</b> (<i>width</i>[, <i>justification</i>])</pre>
+
+			<br />
+			<h4>Arguments</h4>
+
+			<dl>
+			<dt>object</dt>
+			<dd>Required. Always the name of a <b>String</b> object.</dd>
+			<br /><br />
+			
+			<dt>width</dt>
+			<dd>Required.  The number of characters to output.</dd>
+			<br /><br />
+			
+			<dt>justification</dt>
+			<dd>Optional.  The justification value for the output.  0 = left, 1 = right.  If omitted, the output is left-justified.</dd>
+			<br /><br />
+			</dl>
+			
+			
+			<br />
+			<h4>Return Value</h4>
+			The <b>String.column</b> method returns a copy of the <b>string</b> 
+			formatted to the width of the column.  If the length of the string 
+			is less than <i>width</i>, the string is padded with spaces to 
+			achieve the desired width.  If the length of the string is more 
+			than <i>width</i>, only the characters near the justification end 
+			are returned.
+			
+			
+			<br />
+			<h4>Remarks</h4>
+			The following example illustrates the use of the <b>String.column</b> method.
+			<br /><br />
+			
+			<pre>		Console.Writeln("Hello".column(10, 1));	//	returns '     Hello'
+		Console.Writeln("Hello".column(3, 1));	//	returns 'llo'</pre>
+			
+			
+			<br /><br />
+			<h4>Requirements</h4>
+			<a href="String.rTrim.htm">rTrim()</a>, <a href="String.lTrim.htm">lTrim()</a>
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

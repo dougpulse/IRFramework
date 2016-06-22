@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>IR Framework:  Shape.SetValue Method</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>Shape.SetValue Method</h4>
+			
+			Sets values for a given control.<br />
+			
+			<pre style="background-color: eef; 
+				  border-bottom-style: solid; 
+				  border-bottom-color: ccc; 
+				  border-bottom-width: 1px; 
+				  padding-left: 50px; ">[<i>object</i>.]<b>SetValue</b> (<i>valArray</i>)</pre>
+			
+			
+			<br />
+			<h4>Arguments</h4>
+			
+			<dl>
+			<dt>object</dt>
+			<dd>Required.  A <b>Shape</b> object.  This can be a CheckBox, RadioButton, TextLabel, TextBox, DropDown, or ListBox.</dd>
+			<br /><br />
+			
+			<dt>valArray</dt>
+			<dd>Required.  An array containing the value(s) to set.</dd>
+			</dl>
+			
+			
+			<br />
+			<h4>Remarks</h4>
+			If <b>Shape</b> is a CheckBox, RadioButton, TextLabel, or TextBox, only the first value of <i>valArray</i> is used.
+			<br />
+			The following example uses <b>Shape.SetValue Method</b> to set values in a ListBox:
+			<br />
+			<br />
+			
+			<pre>var oList = ActiveDocument.Sections["Dashboard"].Shapes["lstFoo"];
+var arr = new Array("January", "February", "March");
+oList.SetValue(arr);
+</pre>
+			
+			<br />
+			<h4>Requirements</h4>
+			ActiveDocument.loadObjectMethods() must be run after the shape 
+			object is created and before this object method is used.
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>IR Framework:  String.inStr Method</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>String.inStr Method</h4>
+
+			Returns the position of the first occurrence of a string the <b>string</b>.<br />
+
+			<pre style="background-color: eef;
+				  border-bottom-style: solid;
+				  border-bottom-color: ccc;
+				  border-bottom-width: 1px;
+				  padding-left: 50px; "><i><b>object</b></i>.<b>inStr</b> (<i>start</i>, <i>searchstring</i>[, <i>compare</i>])</pre>
+
+			<br />
+			<h4>Arguments</h4>
+
+			<dl>
+			<dt>object</dt>
+			<dd>Required. Always the name of a <b>String</b> object.</dd>
+			<br /><br />
+			
+			<dt>start</dt>
+			<dd>Required. Numeric expression that sets the starting position for each search. 
+			If omitted, search begins at the first character position. If start contains 
+			Null, an error occurs.</dd>
+			<br /><br />
+			
+			<dt>searchstring</dt>
+			<dd>Required. String expression searched for.</dd>
+			<br /><br />
+			
+			<dt>compare</dt>
+			<dd>Optional. Numeric value indicating the kind of comparison to use when 
+			evaluating substrings. If 1, a textual comparison is performed. If 0 or 
+			omitted, a binary comparison is performed.</dd>
+			<br /><br />
+			</dl>
+			
+			
+			<br /><br />
+			<h4>Return Value</h4>
+			The <b>String.inStr</b> method returns the location of the first instance 
+			of <i>searchstring</i> within <b>string</b>.
+			
+			
+			<br /><br /><br />
+			<h4>Remarks</h4>
+			The following example illustrates the use of the <b>String.trim</b> method.
+			<br /><br />
+			
+			<pre>Alert("Hello, world!".inStr(0, "Wo", 1);</pre>
+			
+			
+			<br /><br />
+			<h4>Requirements</h4>
+			<a href="String.rTrim.htm">rTrim()</a>, <a href="String.lTrim.htm">lTrim()</a>
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

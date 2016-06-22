@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>IR Framework:  StopWatch Object</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>StopWatch Object</h4>
+			
+			Object that acts as a stopwatch to provide a way to track elapsed time between events.<br />
+			
+			<br />
+			<h4>Remarks</h4>
+			A <b>StopWatch</b> object stores start and stop time information and reports 
+			an elapsed time in milliseconds.
+			<br /><br />
+			The following code illustrates how to create a <b>StopWatch</b> object:
+			
+			<br />
+			<br />
+			
+			<pre>var swTracker = new Application.StopWatch();
+ActiveDocument.Sections["Q-Contract Expenditures"].Process();
+swTracker.stop();
+Alert(msToTime(swTracker.elapsed));</pre>
+			
+			<br />
+			<br />
+			<h4>Methods</h4>
+			<a href="StopWatch.start.htm">start Method</a> | 
+			<a href="StopWatch.stop.htm">stop Method</a>
+
+			
+			<br /><br />
+			<br /><br />
+			<h4>Properties</h4>
+			<a href="StopWatch.elapsed.htm">elapsed Property</a>
+
+			
+			<br /><br />
+			<br /><br />
+			<h4>Requirements</h4>
+			
+			<br /><br />
+			<br /><br />
+			<h4>See Also</h4>
+			<a href="Application.StopWatch.htm"><b>StopWatch Class</b></a>
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

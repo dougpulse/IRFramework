@@ -1,0 +1,84 @@
+<html>
+<head>
+<title>IR Framework:  StopWatch.stop Method</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>StopWatch.stop Method</h4>
+			
+			Sets the stop time of a <b>StopWatch</b> object.<br />
+			
+			<pre style="background-color: eef; 
+				  border-bottom-style: solid; 
+				  border-bottom-color: ccc; 
+				  border-bottom-width: 1px; 
+				  padding-left: 50px; "><i><b>object</b></i>.<b>start</b> ( )</pre>
+			
+			<br />
+			<h4>Arguments</h4>
+			
+			<dl>
+			<dt>object</dt>
+			<dd>Required. Always the name of a <b>StopWatch</b> object.</dd>
+			<br /><br />
+			</dl>
+			
+			
+			<br />
+			<h4>Remarks</h4>
+			The <i>elapsed</i> time is determined by comparing the <i>stop</i> time to the 
+			<i>start</i> time.  Therefore, <i>elapsed</i> only changes when either <i>start</i> 
+			or <i>stop</i> changes.  The <i>stop</i> method may be called several times without 
+			calling the <i>start</i> method, thereby providing the functionality of a "lap" time 
+			by repeatedly calling <i>stop</i> and <i>elapsed</i>.<br />
+			
+			The following example illustrates the use of the <b>start</b> method.
+			<br /><br />
+			
+			<pre>var swTracker = new Application.StopWatch();
+swTracker.start();
+ActiveDocument.Sections["Q-Contract Expenditures"].Process();
+swTracker.stop();
+Alert(msToTime(swTracker.elapsed));</pre>
+			
+			<br />
+			<br />
+			<h4>Applies To:</h4>
+			<a href="StopWatchObject.htm"><b>StopWatch Object</b></a>
+
+			
+			<br /><br />
+			<br /><br />
+			<h4>Requirements</h4>
+			
+			<br /><br />
+			<br /><br />
+			<h4>See Also</h4>
+			<a href="StopWatch.start.htm">start() method</a><br />
+			<a href="StopWatch.elapsed.htm">elapsed property</a>
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

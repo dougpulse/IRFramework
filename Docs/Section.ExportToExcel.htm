@@ -1,0 +1,106 @@
+<html>
+<head>
+<title>IR Framework:  Section.ExportToExcel Method</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>Section.ExportToExcel Method</h4>
+			
+			The <b>ExportToExcel</b> method exports data from a <b>Results</b>, <b>Table</b>, or <b>Pivot</b> to Excel.<br />
+			
+			<pre style="background-color: eef; 
+				  border-bottom-style: solid; 
+				  border-bottom-color: ccc; 
+				  border-bottom-width: 1px; 
+				  padding-left: 50px; "><i><b>object</b></i>.<b>ExportToExcel</b> (<i>directory</i>, <i>filename</i>[, <i>openwhendone</i>[, <i>unmerge</i>[, <i>unpivot</i>]]])</pre>
+			
+			<br />
+			<h4>Arguments</h4>
+			
+			<dl>
+			<dt>object</dt>
+			<dd>Required. A <b>Results</b>, <b>Table</b>, or <b>Pivot</b> object.</dd>
+			<br />
+			
+			<dt>directory</dt>
+			<dd>Required.  The path to the directory where the exported file will be saved.</dd>
+			<br />
+			
+			<dt>filename</dt>
+			<dd>Required. The name of the exported file without the extension.</dd>
+			<br />
+			
+			<dt>openwhendone</dt>
+			<dd>Optional. A boolean value indicating whether to display the 
+			exported file in Excel when the export is complete.</dd>
+			<br />
+			
+			<dt>unmerge</dt>
+			<dd>Optional. A boolean value indicating whether to unmerge the cells 
+			when the data is exported.  This will also remove row and column totals.</dd>
+			<br />
+			
+			<dt>unpivot</dt>
+			<dd>Optional. A boolean value indicating whether to unpivot the data 
+			when it is exported.  This will also remove row and column totals.</dd>
+			<br />
+			</dl>
+			
+			
+			<br />
+			<h4>Remarks</h4>
+			<p>If the section is a Pivot and <i>unmerge</i> and/or <i>unpivot</i> 
+			are not provided, the user will be presented with a dialog asking 
+			them if they want the data unmerged or unpivotted.</p>
+			<p>This method exports formatted data from Results and Tables.  If the 
+			section is a Pivot, formatting is kept if the data is exported as-is.</p>
+			<p>Formatted data is exported to MIME HTML (.mht) format with a reference 
+			indicating that the contents are intended for Excel.</p>
+			<p>Unformatted data is exported to Excel 97-2003 (.xls) format.</p>
+			<p>If a file of the same name already exists at <i>directory</i>, it will be overwritten.</p>
+			
+			<br /><br />
+			
+			Example:<pre><span class="comment">//	export a section to Excel
+//	This will create a file at c:\myfolder\ExcelExportTest.xls.mht</span>
+ActiveDocument.Sections["Results"].ExportToExcel("c:\\myfolder\\", "ExcelExportTest.xls", true);
+<span class="comment">//	This will create a file at c:\myfolder\ExcelExportTest.xls.xls
+//	The data will be unpivotted.  Any top labels will be made row labels and placed to the 
+//	left of the existing row labels.  Row and column totals will be omitted and cells will not be merged.</span>
+ActiveDocument.Sections["Pivot"].ExportToExcel("c:\\myfolder\\", "ExcelExportTest.xls", true, true, true);
+<span class="comment">//	This will create a file at c:\myfolder\ExcelExportTest.xls.xls
+//	The user will be asked how to process the export.</span>
+ActiveDocument.Sections["Pivot"].ExportToExcel("c:\\myfolder\\", "ExcelExportTest.xls", true);
+<img src="img/ExportPivot.png" /></pre>
+			
+			<br /><br />
+			<br /><br />
+			<h4>Requirements</h4>
+			ActiveDocument.loadObjectMethods() must be run for this method to be available.<br />
+			Microsoft Excel must be installed on the computer running the script.
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>IR Framework:  Documentation Home</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework:  A Scripting Library for Hyperion Interactive Reporting</h2>
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			The scripts documented here have been created to provide standardized, 
+			predictable functionality that is available across all Interactive Reporting 
+			documents that use IR Framework.  To use these scripts in your Interactive 
+			Reporting files, see the <a href="StartupScript.htm">Startup Script</a> help page.
+			<br /><br /><br /><br />
+			
+			<div style="width: 60%; background-color: #ffeebb; padding: 0.2in; ">For objects, properties, 
+			and methods not documented here, like the <b>Hash</b> object or the <b>Array.min()</b> method, 
+			please see the <a href="http://api.prototypejs.org/">documentation for Prototype 1.6</a>.</div>
+			<br /><br /><br /><br />
+			
+			Help document conventions:
+			<dl>
+				<dt>Function, method, and property definitions</dt>
+				<dd>Function Definitions are shown as preformatted text in a shaded box.
+				<pre style="background-color: eef; 
+					  color: 404; 
+					  border-bottom-style: solid; 
+					  border-bottom-color: ccc; 
+					  border-bottom-width: 1px; 
+					  padding-left: 50px; ">[<i><b>ActiveDocument</b></i>.]<b>LoadListBox</b> (<i>DashboardName</i>, <i>ControlName</i>, <i>ResultListName</i>, <i>SourceColName</i>[, <i>FirstItem</i>[, <i>SortDescending</i>[, <i>SortColumn</i>]]])</pre><br /></dd>
+				<dt>Objects</dt>
+				<dd>Object names are in bold font.<br /><br />
+				<span style="padding-left: 50px; ">The control must be a <b>ListBox</b> or <b>DropDown</b>.</span><br /><br /><br /></dd>
+				<dt>Arguments</dt>
+				<dd>Arguments are shown italicized.<br /><br />
+				<span style="padding-left: 50px; "><i>DashboardName</i> is not the name of a <b>Dashboard</b> object.</span><br /><br /><br /></dd>
+				<dt>Sample Code</dt>
+				<dd>Sample code is shown as preformmated text with comments in gray.<br /><br />
+				<pre style="padding-left: 50px; "><span class="comment">//	the following is sample code</span>
+ActiveDocument.LoadListBox("Dashboard", "drpOrgCode", "R-Organization", "Organization Code");
+ActiveDocument.LoadListBox("Dashboard", "lstSubpgm", "R-Subpgm", "Sub Program Name", );</pre><br /><br /><br /></dd>
+			</dl>
+			</span>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>

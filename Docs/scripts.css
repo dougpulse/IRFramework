@@ -1,0 +1,82 @@
+body, table {
+	font-family: tahoma; 
+	font-size: 9pt; 
+}
+
+h4 {
+	color: 008; 
+}
+
+dt {
+	font-style: italic; 
+}
+
+dd {
+	margin-left: 0px; 
+}
+
+tr {
+	vertical-align: top; 
+}
+
+td {
+	padding: 10px; 
+}
+
+pre {
+	font-family: courier new; 
+	color: 404; 
+	font-size: 9pt; 
+}
+
+a {
+	text-decoration: none; 
+}
+
+a:hover	{
+	text-decoration: underline: 
+}
+
+.tableHead	{
+	font-weight: bold; 
+	background-color: eef; 
+	border-bottom-style: solid; 
+	border-bottom-color: ccc; 
+	border-bottom-width: 1px; 
+}
+
+.tableData	{
+	font-weight: normal; 
+	border-bottom-style: solid; 
+	border-bottom-color: ccc; 
+	border-bottom-width: 1px; 
+}
+
+header, nav, article, section, footer, figure, aside {
+	display: block; 
+	bor-der: 1px solid #000000; 
+	padding: 0.1in; 
+}
+
+header {
+	position: absolute; 
+	height: 0.6in; 
+}
+
+nav {
+	position: absolute; 
+	left: 0; 
+	top: 0.8in; 
+	width: 2in; 
+}
+
+article {
+	position: absolute; 
+	left: 2.2in; 
+	top: 0.8in;  
+	text-align: justify; 
+}
+
+.comment	{
+	color: 888888; 
+}

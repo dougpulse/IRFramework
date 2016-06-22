@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>IR Framework:  Startup Script</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+<script language="JavaScript">
+function CopyCode(o) {
+	txtTemp.innerText = o.innerText;
+	rngCode = txtTemp.createTextRange();
+	rngCode.execCommand("Copy");
+}
+</script>
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>Startup Script</h4>
+			
+			Include this script in the Document.OnStartup event to use the IR Framework in a bqy file.<br />
+			<textarea id="txtTemp" style="display:none;"></textarea>
+			<div style="width: 100%; 
+					background-color: eef; 
+					border-bottom-style: solid; 
+					border-bottom-color: ccc; 
+					border-bottom-width: 2px; 
+					text-align: right; "><a style="color: 00f; cursor: hand; padding-right: 10px; font-weight: bold; " onclick="CopyCode(CodeWindow);">Copy Code</a></div>
+			<pre id="CodeWindow" 
+				style="width: 100%; 
+				  background-color: eef; 
+				  position: absolute; ">if (Application.Type != bqAppTypeDesktopClient) {
+	//	Turn off the toolbars for more screen acreage for reporting
+	for (i = 1; i <= Toolbars.Count; i++) Toolbars.Item(i).Visible = false;
+}
+//	Load the scripts
+eval( (new JOOLEObject("Scripting.FileSystemObject")).OpenTextFile(-2, 1, "\\\\servername\\foldername\\Script\\IRFramework.js").ReadAll() );
+//	If you want to turn on toolbars when you leave the document, the following lines are for the Document.OnShutdown event.
+//	Turn on the toolbars for future system usability
+//for (i = 1; i <= Toolbars.Count; i++) Toolbars.Item(i).Visible = true;
+</pre>
+			
+			
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>
