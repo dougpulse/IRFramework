@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>Custom Scripting:  Application.msToTime Function</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>Custom Scripting for Hyperion</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>Application.msToTime Method</h4>
+			
+			Converts a number into a time format.<br />
+			
+			<pre style="background-color: eef; 
+				  border-bottom-style: solid; 
+				  border-bottom-color: ccc; 
+				  border-bottom-width: 1px; 
+				  padding-left: 50px; ">[<i><b>Application</b></i>.]<b>msToTime</b> (<i>milliseconds</i>)</pre>
+			
+			
+			<br />
+			<h4>Arguments</h4>
+			
+			<dl>
+			<dt>milliseconds</dt>
+			<dd>Required.  A number.</dd>
+			<br /><br />
+			</dl>
+			
+			
+			<br />
+			<h4>Return Value</h4>
+			The <i>Application.msToTime</i> method returns a time-formatted string (hh:mm:ss.0000).<br />
+			If <i>milliseconds</i> is not a number, <i>milliseconds</i> is returned and an error
+			message is written to the console.
+			
+			<br /><br /><br />
+			<h4>Remarks</h4>
+			The following example uses <b>msToTime</b> to convert a number of milliseconds 
+			into a more readable format using time elements.
+			<br /><br />
+			
+			<pre>var swTracker = new Application.StopWatch();
+ActiveDocument.Sections["Q-Contract Expenditures"].Process();
+swTracker.stop();
+Alert(msToTime(swTracker.elapsed));</pre>
+			
+			<br /><br />
+			<h4>Requirements</h4>
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

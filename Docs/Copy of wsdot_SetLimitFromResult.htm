@@ -1,0 +1,130 @@
+<html>
+<head>
+<title>WSDOT Custom Scripting:  wsdot_SetLimitFromResult Function</title>
+<link rel="stylesheet" type="text/css" href="wsdot_scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>WSDOT Custom Scripting for Hyperion</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>wsdot_SetLimitFromResults Function</h4>
+			
+			Creates a filter for a <b>Query</b> or <b>Results</b> section based on selected values from a 
+			<b>ListBox</b> or <b>DropDown</b> control.<br />
+			
+			<pre style="background-color: eef; 
+				  border-bottom-style: solid; 
+				  border-bottom-color: ccc; 
+				  border-bottom-width: 1px; 
+				  padding-left: 50px; ">[<i><b>ActiveDocument</b></i>.]<b>wsdot_SetLimitFromResult</b> (<i>ResultsName</i>, <i>ResultsColumnName</i>, <i>SectionName</i>, <i>ItemName</i>, <i>TopicName</i>)</pre>
+			
+			
+			<br />
+			<h4>Arguments</h4>
+			
+			<dl>
+			<dt>ResultsName</dt>
+			<dd>Required.  A string value containing the name of the <b>Results</b> section from which to get the filter values.
+			<br /><br />
+			
+			<dt>ResultsColumnName</dt>
+			<dd>Required.  A string value containing the name of the <b>Item</b> (column) containing the values to  
+			use to populate the filter.  This argument is not used if the section being filtered is a <b>Results</b> section.</dd>
+			<br /><br />
+			
+			<dt>SectionName</dt>
+			<dd>Required.  A string value containing the name of the <b>Query</b> or <b>Results</b> section to create 
+			the filter for.</dd>
+			<br /><br />
+			
+			<dt>ItemName</dt>
+			<dd>Required.  A string value containing the name of the <b>Item</b> (field, column) to filter on.</dd>
+			<br /><br />
+			
+			<dt>TopicName</dt>
+			<dd>Required.  A string value containing the name of the <b>Topic</b> (table) containing 
+			the Item to filter on. This argument is not used if the section being filtered is a <b>Results</b> section.</dd>
+			<br /><br />
+			</dl>
+			
+			
+			<br />
+			<h4>Return Value</h4>
+			The wsdot_SetLimitFromResults function returns the following values:
+			
+			<table width="100%">
+				<tr>
+					<td class="tableHead">If</td>
+					<td class="tableHead">wsdot_SetLimitFromResults returns</td>
+				</tr>
+				<tr>
+					<td class="tableData"><i>ResultsName</i> is not the name of a <b>Results</b> object</td>
+					<td class="tableData">"Results name not valid."</td>
+				</tr>
+				<tr>
+					<td class="tableData">ResultsColumnName is not the name of an <b>Item</b> in <i>ResultsName</i></td>
+					<td class="tableData">"Results column name not valid."</td>
+				</tr>
+				<tr>
+					<td class="tableData"><i>SectionName</i> is not the name of a <b>Query</b> or 
+					<b>Results</b> section in the <b>ActiveDocument</b></td>
+					<td class="tableData">"Section name not valid."</td>
+				</tr>
+				<tr>
+					<td class="tableData"><i>ItemName</i> is not the name of a column in <i>SectionName</i></td>
+					<td class="tableData">"Column name not valid."</td>
+				</tr>
+				<tr>
+					<td class="tableData"><i>SectionName</i> is the name of a <b>Query</b> section 
+					and <i>TopicName</i> is not the name of a <b>Topic</b> in <i>SectionName</i></td>
+					<td class="tableData">"Table name not valid."</td>
+				</tr>
+				<tr>
+					<td class="tableData">All input is valid</td>
+					<td class="tableData">"Success"</td>
+				</tr>
+			</table>
+			
+			
+			<br />
+			<br />
+			<h4>Remarks</h4>
+			The following example uses <b>wsdot_SetLimitFromResults</b> to set a filter on a <b>Query</b> 
+			section based on values in a <b>Result</b> section:
+			<br />
+			<br />
+			
+			<pre>//	The Q-Contracts query returns a list of contract numbers.
+ActiveDocument.Sections["Q-Contracts"].Process();
+wsdot_SetLimitFromResult("R-Contracts", "Contract Number", 
+		"Q-Contract Milestones", "Contract Number", "Contract");
+ActiveDocument.Sections["Q-Contract Milestones"].Process();
+ActiveDocument.Sections["Contract Milestones"].Activate();</pre>
+			
+			<br />
+			<br />
+			<h4>Requirements</h4>
+			The WSDOT Custom Scripts from the script repository must be loaded into the document.
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

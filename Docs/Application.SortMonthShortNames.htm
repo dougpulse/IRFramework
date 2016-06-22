@@ -1,0 +1,124 @@
+<html>
+<head>
+<title>IR Framework:  SortMonthShortNames Function</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>SortMonthShortNames Function</h4>
+			
+			Provides a means to sort month names by their numbers.<br />
+			
+			<pre style="background-color: eef; 
+				  color: 404; 
+				  border-bottom-style: solid; 
+				  border-bottom-color: ccc; 
+				  border-bottom-width: 1px; 
+				  padding-left: 50px; ">[<i><b>ActiveDocument</b></i>.]<b>SortMonthShortNames</b> (a, b)
+Array.sort([<i><b>ActiveDocument</b></i>.]<b>SortMonthShortNames</b>)</pre>
+			
+			
+			<br />
+			<h4>Arguments</h4>
+			
+			<dl>
+			<dt>a</dt>
+			<dd>Required.  The first value to use in the comparison.</dd>
+			<br /><br />
+			
+			<dt>b</dt>
+			<dd>Required.  The second value to use in the comparison.</dd>
+			<br /><br />
+			</dl>
+			
+			
+			<br />
+			<h4>Return Value</h4>
+			The <b>SortMonthShortNames</b> function returns the following values:
+			
+			<table style="table-layout: fixed; width: 8in; padding: 0; border-spacing: 0; border-width: 0; ">
+				<tr>
+					<td class="tableHead" style="width: 5in; ">If</td>
+					<td class="tableHead" style="width: 3in; ">SortMonthShortNames returns</td>
+				</tr>
+				<tr>
+					<td class="tableData">Neither <i>a</i> nor <i>b</i> is in the MonthName array and <i>a</i> = "Mo25"</td>
+					<td class="tableData">-1</td>
+				</tr>
+				<tr>
+					<td class="tableData">Neither <i>a</i> nor <i>b</i> is in the MonthName array and <i>b</i> = "Mo25"</td>
+					<td class="tableData">1</td>
+				</tr>
+				<tr>
+					<td class="tableData" colspan="2">Neither <i>a</i> nor <i>b</i> is in the MonthName array and Neither <i>a</i> nor <i>b</i> = "Mo25"
+						<table style="table-layout: fixed; width: 7.8in; padding: 0; border-spacing: 0; border-width: 0; ">
+							<tr>
+								<td style="width: 4.9in; ">a == b</td>
+								<td style="width: 2.9in; ">0</td>
+							</tr>
+							<tr>
+								<td>a < b</td>
+								<td>-1</td>
+							</tr>
+							<tr>
+								<td>a > b</td>
+								<td>1</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td class="tableData"><i>a</i> is not in the MonthName array</td>
+					<td class="tableData">1</td>
+				</tr>
+				<tr>
+					<td class="tableData"><i>b</i> is not in the MonthName array</td>
+					<td class="tableData">-1</td>
+				</tr>
+				<tr>
+					<td class="tableData"><i>a</i> nor <i>b</i> are both in the MonthName array</td>
+					<td class="tableData">month number of <i>a</i> minus month number of <i>b</i></td>
+				</tr>
+			</table>
+			
+			
+			<br />
+			<br />
+			<h4>Remarks</h4>
+			The following example uses <b>SortMonthShortNames</b> to sort a list of months by month number:
+			<br />
+			<br />
+			
+			<pre>var arr = new Array("Apr", "Aug", "Dec", "Feb", "Jan", "Jul", "Jun", "Mar", "May", "Nov", "Oct", "Sep");
+arr.sort(SortMonthShortNames);
+Console.Writeln(arr.toString());    <font color="888888">//  returns Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec</font>
+</pre>
+			
+			<br />
+			<br />
+			<h4>Requirements</h4>
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

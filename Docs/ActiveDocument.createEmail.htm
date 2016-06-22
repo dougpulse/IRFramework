@@ -1,0 +1,97 @@
+<html>
+<head>
+<title>IR Framework:  ActiveDocument.createEmail Function</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>ActiveDocument.createEmail Function</h4>
+			
+			Creates an e-mail message containing the url to the current query document.<br />
+			
+			<pre style="background-color: eef; 
+				  border-bottom-style: solid; 
+				  border-bottom-color: ccc; 
+				  border-bottom-width: 1px; 
+				  padding-left: 50px; ">[<i><b>ActiveDocument</b></i>.]<b>createEmail</b> ([<i>To</i>, [<i>Subject</i>, [<i>Message</i>, [<i>Attachments</i>, [<i>IncludeLink</i>]]]]])</pre>
+			
+			
+			<br />
+			<h4>Arguments</h4>
+			
+			<dl>
+			<dt>To</dt>
+			<dd>Optional.  An array of strings containing valid e-mail addresses.  
+			If this argument is not an array, it is ignored.  Any non-string value 
+			in this array is ignored.  The default value is blank.</dd>
+			<br /><br />
+			
+			<dt>Subject</dt>
+			<dd>Optional.  A string value to populate the subject line of the 
+			e-mail.  The default value is "Link to Report".</dd>
+			<br /><br />
+			
+			<dt>Message</dt>
+			<dd>Optional.  A string value to replace the generic message before 
+			the url.  The default is "Please follow this link to the report:\n\n".</dd>
+			<br /><br />
+			
+			<dt>Attachments</dt>
+			<dd>Optional.  An array of strings containing valid paths to files 
+			to attach to the message.  If this argument is not an array, it is 
+			ignored.  Any non-string value in this array is ignored.  The 
+			default value is blank (no attachments).</dd>
+			<br /><br />
+			
+			<dt>IncludeLink</dt>
+			<dd>Optional.  Boolean value indicating whether or not to include 
+			in the message body a hyperlink to the current document.</dd>
+			<br /><br />
+			</dl>
+			
+			
+			<br />
+			<br />
+			<h4>Remarks</h4>
+			The <b>createEmail</b> function only works properly when 
+			viewing a query document that was opened from within the Workspace.  
+			If the function is used from a document opened from a local or 
+			network drive, the url is incorrect.<br /><br />
+			The following example uses <b>createEmail</b> to create 
+			an e-mail with a custom message addressed to three people:
+			<br />
+			<br />
+			
+			<pre>
+ActiveDocument.createEmail(["John.Doe@gmail.com","SchmoeJ@mail.ahoo.com"], undefined, "As we discussed...\n\n");
+</pre>
+			
+			<br />
+			<br />
+			<h4>Requirements</h4>
+			Microsoft Outlook
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>IR Framework:  Array Average Methods</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>Array Average Methods</h4>
+
+			Numerical average methods for values in an array.<br />
+
+			<pre style="background-color: eef;
+				  border-bottom-style: solid;
+				  border-bottom-color: ccc;
+				  border-bottom-width: 1px;
+				  padding-left: 50px; "><i><b>object</b></i>.<b>mean</b> ()
+<i><b>object</b></i>.<b>median</b> ()
+<i><b>object</b></i>.<b>mode</b> ()
+<i><b>object</b></i>.<b>range</b> ()</pre>
+
+			<br />
+			<h4>Arguments</h4>
+
+			<dl>
+			<dt>object</dt>
+			<dd>Required. Always the name of an <b>Array</b> object.</dd>
+			<br /><br />
+			</dl>
+			
+			
+			<br /><br />
+			<h4>Return Value</h4>
+			<p>These methods returns the value as indicated by the method's name.</p>
+			<p>If the values in the array are not all numeric, the return value is <i>undefined</i>.</p>
+			<p>Since there can be multiple modes, Array.mode() returns an array containing the resulting values.</p>
+			
+			
+			<br /><br />
+			<h4>Remarks</h4>
+			<p>All of the values in the array must be numbers.</p>
+			<p>The following example illustrates the use of the Array Average methods.</p>
+			<br />
+			
+			<pre>var a = new Array("He", "ll", "o", ", Wo", "rld", "!");
+Console.Writeln(typeof a.mean());         <span class="comment">//  returns "undefined"</span>
+
+var b = new Array(1, 4, 6, 3, 4, 7, 3, -1);
+Console.Writeln(b.sum().toString());      <span class="comment">//  returns "27"</span>
+Console.Writeln(b.mean().toString());     <span class="comment">//  returns "3.375"</span>
+Console.Writeln(b.median().toString());   <span class="comment">//  returns "3.5"</span>
+Console.Writeln(b.mode().toString());     <span class="comment">//  returns "4,3"</span>
+Console.Writeln(b.range().toString());    <span class="comment">//  returns "8"</span>
+</pre>
+			
+			<br /><br />
+			<h4>Requirements</h4>
+			</span>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>

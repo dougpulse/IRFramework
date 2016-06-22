@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>IR Framework:  Array.or Method</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>Array.or Method</h4>
+
+			Identify values that are in either of two <b>Arrays</b>.<br />
+
+			<pre style="background-color: eef;
+				  border-bottom-style: solid;
+				  border-bottom-color: ccc;
+				  border-bottom-width: 1px;
+				  padding-left: 50px; "><i><b>object</b></i>.<b>or</b> (arr)</pre>
+
+			<br />
+			<h4>Arguments</h4>
+
+			<dl>
+			<dt>object</dt>
+			<dd>Required. Always the name of an <b>Array</b> object.</dd>
+			<br /><br />
+			
+			<dt>arr</dt>
+			<dd>Required. The other array in the comparison.</dd>
+			<br /><br />
+			</dl>
+			
+			
+			<br />
+			<h4>Return Value</h4>
+			The <b>Array.or</b> method returns an array containing the values that are in either array.
+			
+			
+			<br />
+			<h4>Remarks</h4>
+			The following example illustrates the use of the <b>Array.or</b> method.
+			<br /><br />
+			
+			<pre><font color="888888">//	Let's create some arrays then compare them.</font>
+var a = new Array("a", "b", "c", "d", "b", "e", "d");
+var a = new Array("c", "d", "e", "f", "d", "g", "e");
+Console.Writeln(a.toString());        <font color="888888">//    returns "a,b,b,d,b,e,d"</font>
+Console.Writeln(b.toString());        <font color="888888">//    returns "c,d,e,f,d,g,e"</font>
+var x = a.and(b);                     <font color="888888">//    find the values that are in both arrays</font>
+<b>var y = a.or(b);                      <font color="888888">//    find the values that are in either array</font></b>
+var z = a.xor(b);                     <font color="888888">//    find the values that are in one array or the other, but not both</font>
+Console.Writeln(x.toString());        <font color="888888">//    returns "c,d,e"</font>
+<b>Console.Writeln(y.toString());        <font color="888888">//    returns "a,b,c,d,e,f,g"</font></b>
+Console.Writeln(z.toString());        <font color="888888">//    returns "a,b,f,g"</font>
+
+</pre>
+			
+			<!-- <br />
+			<br />
+			<h4>Applies To:</h4>
+			<a href="DictionaryObject.htm"><b>Dictionary Object</b></a>
+
+
+			<br /><br /> -->
+			<br /><br />
+			<h4>Requirements</h4>
+			<a href="Array.clone.htm">Array.clone()</a>, <a href="Array.unique.htm">Array.unique()</a>
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

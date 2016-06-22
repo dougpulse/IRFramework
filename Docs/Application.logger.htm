@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>IR Framework:  Application.logger Class</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+				<h4>Application.logger Class</h4>
+				
+				Creates a <b>logger</b> object.<br />
+				
+				<pre style="background-color: eef; 
+					  border-bottom-style: solid; 
+					  border-bottom-color: ccc; 
+					  border-bottom-width: 1px; 
+					  padding-left: 50px; ">[<i><b>Application</b></i>.]<b>logger</b> ([<i>LogLevel</i>[, <i>Target</i>[, <i>Verbose</i>]]])</pre>
+				
+				<br />
+				<h4>Arguments</h4>
+				<span>
+					<dl>
+						<dt>LogLevel</dt>
+						<dd>Optional.  The initial log level for the logger.  If omitted, logging is off.  
+						For specific values, see documentation for <a href="logger.LEVELObject.htm"><b>Log Levels</b></a></dd>
+						<br /><br />
+						
+						<dt>Target</dt>
+						<dd>Optional.  The path and name of the log file.  This can be a local path or a UNC path.<br />
+						If only a file name is given, the My Documents folder is used.<br />
+						Keywords "alert" or "console" can be used to log to an Alert box or to the Console window, respectively.</dd>
+						<br /><br />
+						
+						<dt>Verbose</dt>
+						<dd>Optional.  Boolean.
+						<table width="100%">
+							<tr>
+								<td class="tableHead">Value</td>
+								<td class="tableHead">Log Entry Format Example</td>
+							</tr>
+							<tr>
+								<td class="tableData">true</td>
+								<td class="tableData"><pre>09/19/2013 12:33:00	message</pre></td>
+							</tr>
+							<tr>
+								<td class="tableData">false</td>
+								<td class="tableData"><pre>09/19/2013 12:33:00	UserName	ComputerName	DesktopClient
+C:\ScriptTester.bqy
+[url or undefined]
+message</pre></td>
+							</tr>
+							</tr>
+						</table>
+						</dd>
+						<br /><br />
+					</dl>
+				</span>
+				
+				<br />
+				<h4>Return Value</h4>
+				<span">
+					The Application.logger class returns a <a href="loggerObject.htm"><b>logger</b></a> 
+					object that can be used to write log entries.<br />
+				</span>
+				
+				<br />
+				<br />
+				<br />
+				<h4>Requirements</h4>
+				<span style="width: 500px; ">
+				</span>
+			</span>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>

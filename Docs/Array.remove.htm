@@ -1,0 +1,83 @@
+<html>
+<head>
+<title>IR Framework:  Array.remove Method</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>Array.remove Method</h4>
+
+			Removes elements with specific values from an <b>Array</b>.<br />
+
+			<pre style="background-color: eef;
+				  border-bottom-style: solid;
+				  border-bottom-color: ccc;
+				  border-bottom-width: 1px;
+				  padding-left: 50px; "><i><b>object</b></i>.<b>remove</b> (<i>value</i>[, <i>count</i>])</pre>
+
+			<br />
+			<h4>Arguments</h4>
+
+			<dl>
+			<dt>object</dt>
+			<dd>Required. Always the name of an <b>Array</b> object.</dd>
+			<br /><br />
+
+			<dt>value</dt>
+			<dd>Required. The value to search for within the <b>Array</b> object.</dd>
+			<br /><br />
+
+			<dt>count</dt>
+			<dd>Optional. The number of matching elements, beginning at the beginning of the <b>Array</b> object, to remove from <i>object</i>.</dd>
+			<br /><br />
+			</dl>
+			
+			
+			<br />
+			<h4>Return Value</h4>
+			The <b>Array.remove</b> method returns the number of elements that were removed from <i>object</i>.
+			<br />
+			
+			
+			<br />
+			<h4>Remarks</h4>
+			The following example illustrates the use of the <b>Array.remove</b> method.
+			<br /><br />
+			
+			<pre>var a = new Array("a", "c", "b", "d", "b", "e", "b");
+
+Console.Writeln(a.remove("k").toString());      <font color="888888">//  returns 0</font>
+Console.Writeln(a.toString());                  <font color="888888">//  returns a,c,b,d,b,e,b</font>
+Console.Writeln(a.remove("b", 1).toString());   <font color="888888">//  returns 1</font>
+Console.Writeln(a.toString());                  <font color="888888">//  returns a,c,d,b,e,b</font>
+Console.Writeln(a.remove("d", 6).toString());   <font color="888888">//  returns 1</font>
+Console.Writeln(a.toString());                  <font color="888888">//  returns a,c,b,e,b</font>
+Console.Writeln(a.remove("b").toString());      <font color="888888">//  returns 2</font>
+Console.Writeln(a.toString());                  <font color="888888">//  returns a,c,e</font>
+</pre>
+			
+			<br /><br />
+			<h4>Requirements</h4>
+			</span>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>

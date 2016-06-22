@@ -1,0 +1,107 @@
+<html>
+<head>
+<title>IR Framework:  ActiveDocument.loadObjectMethods Method</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>ActiveDocument.loadObjectMethods Method</h4>
+			
+			The <b>loadObjectMethods</b> method adds custom methods to all of the controls that reside on dashboards in the <b>ActiveDocument</b>.<br />
+			
+			<pre style="background-color: eef; 
+				  border-bottom-style: solid; 
+				  border-bottom-color: ccc; 
+				  border-bottom-width: 1px; 
+				  padding-left: 50px; "><i><b>object</b></i>.<b>loadObjectMethods</b> ()</pre>
+			
+			<br />
+			<h4>Arguments</h4>
+			
+			<dl>
+			<dt>object</dt>
+			<dd>Required. Always the <b>ActiveDocument</b> object.</dd>
+			<br /><br />
+			</dl>
+			
+			
+			<br />
+			<h4>Remarks</h4>
+			Call the <b>loadObjectMethods</b> after creating the objects on which you want the methods applied.<br />
+			The <b>loadObjectMethods</b> method creates the following properties and methods for dashboard shape objects:<br />
+			<a href="Shape.GetValue.htm">GetValue()</a>, <a href="Shape.SetValue.htm">SetValue()</a>, <a href="Shape.GetList.htm">GetList()</a>, <a href="Shape.SetList.htm">SetList()</a>
+			The <b>loadObjectMethods</b> method creates the following methods for dashboard objects:<br />
+			<a href="Shape.GetValue.htm">SaveUserValues()</a>, <a href="Shape.SetValue.htm">LoadUserValues()</a>, <a href="Shape.GetList.htm">ControlExists()</a>
+			<table>
+				<tr class="tableHead">
+					<td>Objects</td><td>Properties/Methods</td>
+				</tr>
+				<tr class="tableData">
+					<td>Dashboard</td>
+					<td><a href="Shape.GetValue.htm">SaveUserValues()</a><br />
+						<a href="Shape.SetValue.htm">LoadUserValues()</a><br />
+						<a href="Shape.GetList.htm">ControlExists()</a><br /></td>
+				</tr>
+				<tr class="tableData">
+					<td>Dashboard Shapes</td>
+					<td><a href="Shape.GetValue.htm">GetValue()</a><br />
+						<a href="Shape.SetValue.htm">SetValue()</a><br />
+						<a href="Shape.GetList.htm">GetList()</a><br />
+						<a href="Shape.SetList.htm">SetList()</a><br />
+						maximize()<br /></td>
+				</tr>
+				<tr class="tableData">
+					<td>Results, Tables, Pivots</td>
+					<td><a href="Section.ExportToExcel.htm">ExportToExcel()</a><br /></td>
+				</tr>
+				<tr class="tableData">
+					<td>Results, Tables</td>
+					<td><a href="Section.sort.htm">sort()</a><br />
+						sortAppend()<br />
+						<a href="Section.getValues.htm">getValues()</a><br /></td>
+				</tr>
+				<tr class="tableData">
+					<td>Limits</td>
+					<td><a href="Limit.getSelection.htm">getSelection()</a><br />
+						<a href="Limit.setSelection.htm">setSelection()</a><br /></td>
+				</tr>
+				<tr class="tableData">
+					<td>Result/Table Columns</td>
+					<td><a href="Column.toArray.htm">toArray()</a><br /></td>
+				</tr>
+			</table>
+			<br /><br /><br />
+			
+			Example:<pre><font color="888888">//	create the custom methods for dashboard controls</font>
+ActiveDocument.loadObjectMethods();</pre>
+			
+			<br />
+			<br /><br />
+			<h4>Requirements</h4>
+			
+			
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

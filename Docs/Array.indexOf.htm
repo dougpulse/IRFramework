@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>IR Framework:  Array.indexOf Method</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>Array.indexOf Method</h4>
+
+			Returns the index of the first occurance a value in the <b>Array</b>.<br />
+
+			<pre style="background-color: eef;
+				  border-bottom-style: solid;
+				  border-bottom-color: ccc;
+				  border-bottom-width: 1px;
+				  padding-left: 50px; "><i><b>object</b></i>.<b>indexOf</b> (<i>value</i>[, <i>startIndex</i>])</pre>
+
+			<br />
+			<h4>Arguments</h4>
+
+			<dl>
+			<dt>object</dt>
+			<dd>Required. Always the name of an <b>Array</b> object.</dd>
+			<br /><br />
+
+			<dt>value</dt>
+			<dd>Required. The value to search for within the <b>Array</b> object.</dd>
+			<br /><br />
+
+			<dt>startIndex</dt>
+			<dd>Optional. Integer value specifying the index to begin searching within the <b>Array</b> object. If omitted, searching starts at the beginning of the <b>Array</b>.</dd>
+			<br /><br />
+			</dl>
+			
+			
+			<br />
+			<h4>Return Value</h4>
+			The <b>Array.indexOf</b> method returns the following values:
+			
+			<table width="100%">
+				<tr>
+					<td class="tableHead">If</td>
+					<td class="tableHead"><b>Array.indexOf</b> returns</td>
+				</tr>
+				<tr>
+					<td class="tableData"><i>value</i> is the value of an element of <b>object</b> whose 
+					index is between startIndex and <i>object</i>.length</td>
+					<td class="tableData">the index of the first element that contains exactly <i>value</i></td>
+				</tr>
+				<tr>
+					<td class="tableData"><i>value</i> is not the value of an element of <b>object</b> whose 
+					index is between startIndex and <i>object</i>.length</td>
+					<td class="tableData">-1</td>
+				</tr>
+			</table>
+			
+			
+			<br />
+			<h4>Remarks</h4>
+			The following example illustrates the use of the <b>Array.indexOf</b> method.
+			<br /><br />
+			
+			<pre>var a = new Array("a", "c", "b", "d", "b");
+
+Console.Writeln(a.indexOf("k"));			<font color="888888">//	returns -1</font>
+Console.Writeln(a.indexOf("b"));			<font color="888888">//	returns 2</font>
+Console.Writeln(a.indexOf("b", 3));			<font color="888888">//	returns 4</font>
+Console.Writeln(a.indexOf("c", 3));			<font color="888888">//	returns -1</font>
+</pre>
+			
+			<br /><br />
+			<h4>Requirements</h4>
+			</span>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>

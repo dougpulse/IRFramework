@@ -1,0 +1,88 @@
+<html>
+<head>
+<title>IR Framework:  ActiveDocument.SectionExists Function</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>ActiveDocument.SectionExists Function</h4>
+			
+			Determines whether a given section exists in the ActiveDocument.<br />
+			
+			<pre style="background-color: eef; 
+				  border-bottom-style: solid; 
+				  border-bottom-color: ccc; 
+				  border-bottom-width: 1px; 
+				  padding-left: 50px; ">[<i><b>ActiveDocument</b></i>.]<b>SectionExists</b> (<i>Section</i>)</pre>
+			
+			
+			<br />
+			<h4>Arguments</h4>
+			
+			<dl>
+			<dt>Section</dt>
+			<dd>Required.  A string value containing the name of the <b>Section</b> for which to search.</dd>
+			<br /><br />
+			</dl>
+			
+			
+			<br />
+			<h4>Return Value</h4>
+			The SectionExists function returns the following values:
+			
+			<table width="100%">
+				<tr>
+					<td class="tableHead">If</td>
+					<td class="tableHead">SectionExists returns</td>
+				</tr>
+				<tr>
+					<td class="tableData"><i>Section</i> is not the name of a <b>Section</b> object in the ActiveDocument.</td>
+					<td class="tableData">false<br />...and "<i>Section</i> is not the name of 
+					a Section object." is written to the console.</i></td>
+				</tr>
+				<tr>
+					<td class="tableData"><i>Section</i> is the name of a <b>Section</b> object in the ActiveDocument.</td>
+					<td class="tableData">true</td>
+				</tr>
+			</table>
+			
+			
+			<br />
+			<br />
+			<h4>Remarks</h4>
+			The following examples use <b>ActiveDocument.SectionExists</b> to determine whether a section exists:
+			<br />
+			<br />
+			
+			<pre>//	output whether a section named "Dashboard" exists in the ActiveDocument
+Alert(ActiveDocument.SectionExists("Dashboard"));
+</pre>
+			
+			<br />
+			<br />
+			<h4>Requirements</h4>
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

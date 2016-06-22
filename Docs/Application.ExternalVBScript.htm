@@ -1,0 +1,132 @@
+<html>
+<head>
+<title>IR Framework:  ActiveDocument.ExternalVBScript Function</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+				<h4>ActiveDocument.ExternalVBScript Function</h4>
+				
+				Creates an <b>ExternalVBScript</b> object.<br />
+				
+				<pre style="background-color: eef; 
+					  border-bottom-style: solid; 
+					  border-bottom-color: ccc; 
+					  border-bottom-width: 1px; 
+					  padding-left: 50px; ">[<i><b>ActiveDocument</b></i>.]<b>ExternalVBScript</b> ([<i>Path</i>[, <i>File</i>[, <i>Script</i>[, <i>Args</i>[, <i>Timeout</i>[, <i>Debug</i>]]]]]])</pre>
+				
+				<br />
+				<h4>Arguments</h4>
+				<span style="width: 500px; ">
+					<dl>
+						<dt>Path</dt>
+						<dd>Optional.  The path to the file into which we will write the script.  If omitted or a zero-length string, the user's temp folder is used.</dd>
+						<br /><br />
+						
+						<dt>File</dt>
+						<dd>Optional.  The name of the file into which we will write the script.  If omitted or a zero-length string, "TempScript.vbs" is used.</dd>
+						<br /><br />
+						
+						<dt>Script</dt>
+						<dd>Optional.  The script code to write and run.  The default script produces an alert.</dd>
+						<br /><br />
+						
+						<dt>Args</dt>
+						<dd>Optional.  An array of name-value pairs of arguments to pass to the script.</dd>
+						<br /><br />
+						
+						<dt>Timeout</dt>
+						<dd>Optional.  Maximum number of seconds to wait for the script to complete.</dd>
+						<br /><br />
+						
+						<dt>Debug</dt>
+						<dd>Optional.  Set to true to write debug information to the console.</dd>
+						<br /><br />
+					</dl>
+				</span>
+				
+				<br />
+				<h4>Return Value</h4>
+				<span style="width: 500px; ">
+					The ActiveDocument.ExternalVBScript function returns a <a href="ExternalVBScriptObject.htm"><b>ExternalVBScript</b></a> object that can be used to store and 
+					retrieve key-item pairs.<br />
+				</span>
+				
+				<br />
+				<br />
+				<br />
+				<h4>Remarks</h4>
+				<span style="width: 500px; ">
+					<p>The external script must return a value into the pipe file, 
+					even if it just indicates success or failure.</p>
+					<p>If you expect to use the results from the Run method, set the 
+					timeout long enough to allow your VBScript to complete.  To kick 
+					off a long-running script for which no return value is neccessary, 
+					set the timeout to 0.<\p>
+					<p>To keep the Run method from completing before the script has 
+					completed its work, have the script create a file named runningMSG 
+					in the folder where the script gets written.</p>
+					<p>The script must write output to a file named pipe.txt in the 
+					folder where the script gets written.<\p>
+					<br />
+					<br />
+					
+					The following example uses <b>ActiveDocument.ExternalVBScript</b> to create an ExternalVBScript object:
+					<br />
+					<br />
+					
+					<pre>//	Create the array to store the arguments.
+var arr = new Array();
+//	Enter the arguments in name-value pairs.
+arr.push("Filter");
+arr.push("Text Files|*.txt|Excel Files|*.xls|All Files|*.*");
+arr.push("initdir");
+arr.push("C:\\AAWork");
+
+//	Create an ExternalVBScript object.
+var o = new ActiveDocument.ExternalVBScript(g_strUserTempPath, "OpenFileDialog.vbs", strOFDlgVBS, arr, 60, true);
+
+//	Write the script to a file.
+o.WriteScript();
+
+//	Run the script and get the results.
+var sFile = o.RunScript();
+
+//	Use the results.
+var sContent = ReadTextFromFile(sFile);
+
+//	Reset the properties of the ExternalVBScript 
+//	object and delete its associated files.
+o.Reset();</pre>
+				</span>
+				
+				<br />
+				<br />
+				<h4>Requirements</h4>
+				<span style="width: 500px; ">
+				</span>
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>IR Framework:  Calendar Example</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+<script language="JavaScript">
+function CopyCode(o) {
+	txtTemp.innerText = o.innerText;
+	rngCode = txtTemp.createTextRange();
+	rngCode.execCommand("Copy");
+}
+</script>
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>Calendar Example</h4>
+			
+			<br />
+			<textarea id="txtTemp" style="display:none;"></textarea>
+			<div style="width: 100%; 
+					background-color: eef; 
+					border-bottom-style: solid; 
+					border-bottom-color: ccc; 
+					border-bottom-width: 2px; 
+					text-align: right; "><a style="color: 00f; cursor: hand; padding-right: 10px; font-weight: bold; " onclick="CopyCode(CodeWindow);">Copy Code</a></div>
+			<pre id="CodeWindow" 
+				style="width: 100%; 
+				  background-color: eef; 
+				  position: absolute; ">this.Parent.cal = new Application.Calendar(this.Parent);
+with (this.Parent.cal) {
+	Target(this.Parent.lblDate);
+	ColorToday("ffff00");
+	Show();
+	
+	for (var i = j = 200; i < 400; i += 20, j += 20) {
+		Height(i);
+		Width(j);
+		ColorDefault("88" + (i - 160).toString(16) + (j - 160).toString(16));
+		DoEvents();
+	}
+	for (var i = 400; i > 200; i -= 20) {
+		Height(i);
+		Width(j);
+		ColorDefault("88" + (i - 160).toString(16) + (j - 160).toString(16));
+		DoEvents();
+	}
+	for (var i = 200, j = 400; i < 400; i += 20, j -= 20) {
+		Height(i);
+		Width(j);
+		ColorDefault("88" + (i - 160).toString(16) + (j - 160).toString(16));
+		DoEvents();
+	}
+	for (var i = 400; i > 200; i -= 20) {
+		Height(i);
+		Width(j);
+		ColorDefault("88" + (i - 160).toString(16) + (j - 160).toString(16));
+		DoEvents();
+	}
+}
+</pre>
+			
+			
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>IR Framework:  Array.indicesOf Method</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>Array.indicesOf Method</h4>
+
+			Returns an array containing the indices of the elements of an <b>Array</b> that contain a specific value.<br />
+
+			<pre style="background-color: eef;
+				  border-bottom-style: solid;
+				  border-bottom-color: ccc;
+				  border-bottom-width: 1px;
+				  padding-left: 50px; "><i><b>object</b></i>.<b>indicesOf</b> (<i>value</i>)</pre>
+
+			<br />
+			<h4>Arguments</h4>
+
+			<dl>
+			<dt>object</dt>
+			<dd>Required. Always the name of an <b>Array</b> object.</dd>
+			<br /><br />
+
+			<dt>value</dt>
+			<dd>Required. The value to search for within the <b>Array</b> object.</dd>
+			<br /><br />
+			</dl>
+			
+			
+			<br />
+			<h4>Return Value</h4>
+			The <b>Array.indicesOf</b> method returns the following values:
+			
+			<table width="100%">
+				<tr>
+					<td class="tableHead">If</td>
+					<td class="tableHead"><b>Array.indicesOf</b> returns</td>
+				</tr>
+				<tr>
+					<td class="tableData"><i>value</i> is the value of an element of <b>object</b></td>
+					<td class="tableData">an <b>Array</b> whose element values are the indices of the 
+					elements in <b>object</b> whose values match <i>value</i></td>
+				</tr>
+				<tr>
+					<td class="tableData"><i>value</i> is not the value of an element of <b>object</b></td>
+					<td class="tableData">an <b>Array</b> containing a single element with a value of -1</td>
+				</tr>
+			</table>
+			
+			
+			<br />
+			<h4>Remarks</h4>
+			The following example illustrates the use of the <b>Array.indicesOf</b> method.
+			<br /><br />
+			
+			<pre>var a = new Array("a", "c", "b", "d", "b");
+
+Console.Writeln(a.indicesOf("k").toString());     <font color="888888">//  returns -1</font>
+Console.Writeln(a.indicesOf("b").toString());     <font color="888888">//  returns 2,4</font>
+Console.Writeln(a.indicesOf("d").toString());     <font color="888888">//  returns 3</font>
+</pre>
+			
+			<br /><br />
+			<h4>Requirements</h4>
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+</body>
+</html>
