@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>IR Framework:  Dictionary.Remove Method</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>Dictionary.Remove Method</h4>
+
+			Removes a key, item pair from a <b>Dictionary</b> object.<br />
+
+			<pre style="background-color: eef;
+				  border-bottom-style: solid;
+				  border-bottom-color: ccc;
+				  border-bottom-width: 1px;
+				  padding-left: 50px; "><i><b>object</b></i>.<b>Remove</b> (<i>key</i>)</pre>
+
+			<br />
+			<h4>Arguments</h4>
+
+			<dl>
+			<dt>object</dt>
+			<dd>Required. Always the name of a <b>Dictionary</b> object.</dd>
+			<br /><br />
+
+			<dt>key</dt>
+			<dd>Required. Key associated with the key, item pair you want to remove from the Dictionary object.</dd>
+			<br /><br />
+			</dl>
+			
+			
+			<br />
+			<h4>Remarks</h4>
+			An error occurs if the specified key, item pair does not exist.
+			<br /><br />
+			
+			The following example illustrates the use of the <b>Remove</b> method.
+			<br /><br />
+			
+			<pre>var a, d, i, s;              <font color="888888">// Create some variables.</font>
+d = new Application.Dictionary();
+d.Add ("a", "Athens");       <font color="888888">// Add some keys and items.</font>
+d.Add ("b", "Belgrade");
+d.Add ("c", "Cairo");
+...
+d.Remove("b");               <font color="888888">// Remove second pair.</font></pre>
+			
+			<br />
+			<br />
+			<h4>Applies To:</h4>
+			<a href="DictionaryObject.htm"><b>Dictionary Object</b></a>
+
+
+			<br /><br />
+			<br /><br />
+			<h4>Requirements</h4>
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>IR Framework:  Dictionary Object</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>Dictionary Object</h4>
+			
+			Object that stores data key, item pairs.<br />
+			
+			<br />
+			<h4>Remarks</h4>
+			A <b>Dictionary</b> object is the equivalent of a PERL associative array. Items can be 
+			any form of data, and are stored in the array. Each item is associated with a unique 
+			key. The key is used to retrieve an individual item and is usually an integer or a 
+			string, but can be anything except an array.
+			<br /><br />
+			The following code illustrates how to create a <b>Dictionary</b> object:
+			
+			<br />
+			<br />
+			
+			<pre>var y = new Application.Dictionary();
+y.add ("a", "test");
+if (y.Exists("a"))
+   Console.Writeln("true");
+...</pre>
+			
+			<br />
+			<br />
+			<h4>Methods</h4>
+			<a href="DictionaryAdd.htm">Add Method</a> | 
+			<a href="DictionaryExists.htm">Exists Method</a> | 
+			<a href="DictionaryItems.htm">Items Method</a> | 
+			<a href="DictionaryKeys.htm">Keys Method</a> | 
+			<a href="DictionaryRemove.htm">Remove Method</a> | 
+			<a href="DictionaryRemoveAll.htm">RemoveAll Method</a>
+
+			
+			<br /><br />
+			<br /><br />
+			<h4>Properties</h4>
+			<a href="DictionaryCount.htm">Count Property</a> | 
+			<a href="DictionaryItem.htm">Item Property</a> | 
+			<a href="DictionaryKey.htm">Key Property</a>
+
+			
+			<br /><br />
+			<br /><br />
+			<h4>Requirements</h4>
+			
+			
+			<br /><br />
+			<br /><br />
+			<h4>See Also</h4>
+			<a href="Application.Dictionary.htm"><b>Dictionary Class</b></a>
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

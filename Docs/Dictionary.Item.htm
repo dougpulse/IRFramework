@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>IR Framework:  Dictionary.Item Property</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>Dictionary.Item Property</h4>
+			
+			Sets or returns an <i>item</i> for a specified <i>key</i> in a <b>Dictionary</b> object. Read/write.<br />
+			
+			<pre style="background-color: eef; 
+				  border-bottom-style: solid; 
+				  border-bottom-color: ccc; 
+				  border-bottom-width: 1px; 
+				  padding-left: 50px; "><i><b>object</b></i>.<b>Item</b> (<i>key</i>) [ = <i>newitem</i> ]</pre>
+			
+			<br />
+			<h4>Arguments</h4>
+			
+			<dl>
+			<dt>object</dt>
+			<dd>Required. Always the name of a <b>Dictionary</b> object.</dd>
+			<br /><br />
+			
+			<dt>key</dt>
+			<dd>Required. <i>Key</i> associated with the <i>item</i> being retrieved or added.</dd>
+			<br /><br />
+			
+			<dt>newitem</dt>
+			<dd>Optional. If provided, <i>newitem</i> is the new value associated with the specified <i>key</i>.</dd>
+			<br /><br />
+			</dl>
+			
+			
+			<br />
+			<h4>Remarks</h4>
+			If key is not found when changing an <i>item</i>, a new <i>key</i> is created with 
+			the specified <i>newitem</i>. If <i>key</i> is not found when attempting to return 
+			an existing item, a new <i>key</i> is created and its corresponding item is left empty.<br />
+			
+			The following example illustrates the use of the <b>Item</b> property.
+			<br /><br />
+			
+			<pre>function DicTest(keyword)
+{
+   var a, d;
+   d = new Application.Dictionary();
+   d.Add("a", "Athens");
+   d.Add("b", "Belgrade");
+   d.Add("c", "Cairo");
+   a = d.Item(keyword);
+   return(a);
+}</pre>
+			
+			<br />
+			<br />
+			<h4>Applies To:</h4>
+			<a href="DictionaryObject.htm"><b>Dictionary Object</b></a>
+
+			
+			<br /><br />
+			<br /><br />
+			<h4>Requirements</h4>
+			
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

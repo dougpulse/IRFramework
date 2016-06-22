@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>IR Framework:  Dashboard.ControlExists Function</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>Dashboard.ControlExists Function</h4>
+			
+			Determines whether a given control exists on a given Dashboard.<br />
+			
+			<pre style="background-color: eef; 
+				  border-bottom-style: solid; 
+				  border-bottom-color: ccc; 
+				  border-bottom-width: 1px; 
+				  padding-left: 50px; ">[<i><b>Dashboard</b></i>.]<b>ControlExists</b> (<i>Control</i>)</pre>
+			
+			
+			<br />
+			<h4>Arguments</h4>
+			
+			<dl>
+			<dt>Control</dt>
+			<dd>Required.  A string value containing the name of the control for which to search.</dd>
+			<br /><br />
+			</dl>
+			
+			
+			<br />
+			<h4>Return Value</h4>
+			The DashControlExists function returns the following values:
+			
+			<table width="100%">
+				<tr>
+					<td class="tableHead">If</td>
+					<td class="tableHead">DashControlExists returns</td>
+				</tr>
+				<tr>
+					<td class="tableData"><i>Control</i> is not the name of a control in <i>Dashboard</i>.</td>
+					<td class="tableData">false<br />...and "<i>Control</i> is not the name of a 
+					control in <i>Dashboard</i>." is written to the console.</td>
+				</tr>
+				<tr>
+					<td class="tableData"><i>Control</i> is the name of a control in <i>Dashboard</i>.</td>
+					<td class="tableData">true</td>
+				</tr>
+			</table>
+			
+			
+			<br />
+			<br />
+			<h4>Remarks</h4>
+			The following examples use <b>ControlExists</b> to determine whether a specifit ListBox exists in a dashboard named "Dashboard":
+			<br />
+			<br />
+			
+			<pre>//	output whether lstProgram exists
+Alert(ActiveDocument.Sections["Dashboard"].ControlExists("lstProgram"));
+</pre>
+			
+			<br />
+			<br />
+			<h4>Requirements</h4>
+			ActiveDocument.loadObjectMethods() must be run after the dashboard 
+			object is created and before this object method is used.
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

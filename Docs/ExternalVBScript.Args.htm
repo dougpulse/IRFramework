@@ -1,0 +1,113 @@
+<html>
+<head>
+<title>IR Framework:  ExternalVBScript.Args Property</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+				<h4>ExternalVBScript.Args Property</h4>
+				
+				Gets or sets the array of values defining the command line options 
+				for an <b>ExternalVBScript</b> object.<br />
+				
+				<pre style="background-color: eef; 
+					  border-bottom-style: solid; 
+					  border-bottom-color: ccc; 
+					  border-bottom-width: 1px; 
+					  padding-left: 50px; "><i><b>object</b></i>.<b>getArgs</b></pre>
+				<pre style="background-color: eef; 
+					  border-bottom-style: solid; 
+					  border-bottom-color: ccc; 
+					  border-bottom-width: 1px; 
+					  padding-left: 50px; "><i><b>object</b></i>.<b>setArgs</b>(<i>newvalue</i>)</pre>
+				
+				<br />
+				<h4>Arguments</h4>
+				<span style="width: 500px; ">
+					<dl>
+						<dt>object</dt>
+						<dd>Required. Always the name of a <b>ExternalVBScript</b> object.</dd>
+						<br /><br />
+			
+						<dt>newValue</dt>
+						<dd>Required for setArgs. An <b>Array</b> containing name-value pairs 
+						to use as command line arguments.</dd>
+						<br /><br />
+					</dl>
+				</span>
+				
+				
+				<br />
+				<h4>Remarks</h4>
+				<span style="width: 500px; ">
+					The following example illustrates the use of the <b>Args</b> Property.
+					<br /><br />
+					
+					<pre>//	Create the array to store the arguments.
+var arr = new Array();
+//	Enter the arguments in name-value pairs.
+arr.push("Filter");
+arr.push("Text Files|*.txt|Excel Files|*.xls|All Files|*.*");
+arr.push("initdir");
+arr.push("C:\\AAWork");
+
+//	Create an ExternalVBScript object.
+var o = new ActiveDocument.ExternalVBScript(g_strUserTempPath, "OpenFileDialog.vbs", strOFDlgVBS, arr, 60, true);
+
+<b>//	modify a command-line argument
+var arrTemp = o.getArgs();
+arrTemp[1] = "Text Files|*.txt|All Files|*.*";
+o.setArgs(arrTemp);</b>
+
+//	Write the script to a file.
+o.WriteScript();
+
+//	Run the script and get the results.
+var sFile = o.RunScript();
+
+//	Use the results.
+var sContent = ReadTextFromFile(sFile);
+
+//	Reset the properties of the ExternalVBScript 
+//	object and delete its associated files.
+o.Reset();</pre>
+				</span>
+			
+				<br />
+				<br />
+				<h4>Applies To:</h4>
+				<span style="width: 500px; ">
+					<a href="ExternalVBScriptObject.htm"><b>ExternalVBScript Object</b></a>
+				</span>
+
+				
+				<br /><br />
+				<br /><br />
+				<h4>Requirements</h4>
+				<span style="width: 500px; ">
+				</span>
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

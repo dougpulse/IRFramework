@@ -1,0 +1,88 @@
+<html>
+<head>
+<title>WSDOT Custom Scripting:  Dictionary.Keys Method</title>
+<link rel="stylesheet" type="text/css" href="wsdot_scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>WSDOT Custom Scripting for Hyperion</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>Dictionary.Keys Method</h4>
+			
+			Returns an array containing all existing keys in a <b>Dictionary</b> object.<br />
+			
+			<pre style="background-color: eef; 
+				  border-bottom-style: solid; 
+				  border-bottom-color: ccc; 
+				  border-bottom-width: 1px; 
+				  padding-left: 50px; "><i><b>object</b></i>.<b>Keys</b> ( )</pre>
+			
+			<br />
+			<h4>Arguments</h4>
+			
+			<dl>
+			<dt>object</dt>
+			<dd>Required. Always the name of a <b>Dictionary</b> object.</dd>
+			<br /><br />
+			
+			<dt>key</dt>
+			<dd>Required. Key value being searched for in the <b>Dictionary</b> object.</dd>
+			<br /><br />
+			</dl>
+			
+			
+			<br />
+			<h4>Remarks</h4>
+			The following example illustrates the use of the <b>Keys</b> method.
+			<br /><br />
+			
+			<pre>function KeysDemo()
+{
+   var a, d, i, s;                         <font color="888888">// Create some variables.</font>
+   d = new ActiveXObject("Scripting.Dictionary");  
+   d.Add ("a", "Athens");                  <font color="888888">// Add some keys and items.</font>
+   d.Add ("b", "Belgrade");
+   d.Add ("c", "Cairo");
+   a = (new VBArray(d.Keys())).toArray();  <font color="888888">// Get the keys.</font>
+   s = "";
+   for (i in a)                            <font color="888888">// Iterate the dictionary.</font>
+   {
+      s += a[i] + " - " + d(a[i]) + "<br>";
+   }
+   return(s);                              <font color="888888">// Return the results.</font>
+}</pre>
+			
+			<br />
+			<br />
+			<h4>Applies To:</h4>
+			<a href="DictionaryObject.htm"><b>Dictionary Object</b></a>
+
+			
+			<br /><br />
+			<br /><br />
+			<h4>Requirements</h4>
+			The WSDOT Custom Scripts from the script repository must be loaded into the document.
+			
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<html>
+<head>
+<title>IR Framework:  ExternalVBScript Object</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>ExternalVBScript Object</h4>
+			
+			Object that stores data key, item pairs.<br />
+			
+			<br />
+			<h4>Remarks</h4>
+			An <b>ExternalVBScript</b> object allows creation and interaction 
+			with the operating system through user-defined Windows Scripting 
+			Host Visual Basic scripts.
+			<br /><br />
+				
+			The following code illustrates how to create an <b>ExternalVBScript</b> object:
+			
+			<br />
+			<br />
+			
+			<pre>//	Create the array to store the arguments.
+var arr = new Array();
+//	Enter the arguments in name-value pairs.
+arr.push("Filter");
+arr.push("Text Files|*.txt|Excel Files|*.xls|All Files|*.*");
+arr.push("initdir");
+arr.push("C:\\AAWork");
+
+<b>//	Create an ExternalVBScript object.
+var o = new ActiveDocument.ExternalVBScript(g_strUserTempPath, "OpenFileDialog.vbs", strOFDlgVBS, arr, 60, true);</b>
+
+//	Write the script to a file.
+o.WriteScript();
+
+//	Run the script and get the results.
+var sFile = o.RunScript();
+
+//	Use the results.
+var sContent = ReadTextFromFile(sFile);
+
+//	Reset the properties of the ExternalVBScript 
+//	object and delete its associated files.
+o.Reset();</pre>
+			
+			<br />
+			<br />
+			<h4>Methods</h4>
+			<a href="ExternalVBScriptReset.htm">Reset Method</a> | 
+			<a href="ExternalVBScriptWriteScript.htm">WriteScript Method</a> | 
+			<a href="ExternalVBScriptRunScript.htm">RunScript Method</a>
+
+			
+			<br /><br />
+			<br /><br />
+			<h4>Properties</h4>
+			<a href="ExternalVBScriptDebug.htm">Debug Property</a> | 
+			<a href="ExternalVBScriptTimeout.htm">Timeout Property</a> | 
+			<a href="ExternalVBScriptScript.htm">Script Property</a> | 
+			<a href="ExternalVBScriptArgs.htm">Args Property</a> | 
+			<a href="ExternalVBScriptArgString.htm">ArgString Property</a> | 
+			<a href="ExternalVBScriptPath.htm">Path Property</a> | 
+			<a href="ExternalVBScriptFileName.htm">FileName Property</a>
+
+			
+			<br /><br />
+			<br /><br />
+			<h4>Requirements</h4>
+			
+			<br /><br />
+			<br /><br />
+			<h4>See Also</h4>
+			<a href="ActiveDocument.ExternalVBScript.htm"><b>ExternalVBScript Class</b></a>
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

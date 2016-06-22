@@ -1,0 +1,200 @@
+<html>
+<head>
+<title>IR Framework:  Date.dateDiff Method</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>Date.dateDiff Method</h4>
+			
+			Returns the number of intervals between two dates.<br />
+			
+			<pre style="background-color: eef;
+				  border-bottom-style: solid;
+				  border-bottom-color: ccc;
+				  border-bottom-width: 1px;
+				  padding-left: 50px; "><i><b>object</b></i>.<b>dateDiff</b> (<i>interval</i>, <i>toDate</i>[, <i>firstDayOfWeek</i>[, <i>calendar</i>]])</pre>
+					
+			<br />string
+			<h4>Arguments</h4>
+			
+			<dl>
+			<dt>object</dt>
+			<dd>Required. Always the name of a <b>Date</b> object.  This is u
+			sed as the beginning date for the calculation.</dd>
+			<br /><br />
+			
+			<dt>interval</dt>
+			<dd>Required. String expression that is the interval you want to 
+			use to calculate the differences between date1 and date2. See 
+			Settings section for values.</dd>
+			<br /><br />
+			
+			<dt>toDate</dt>
+			<dd>Required.  The <b>Date</b> object that defines the end date 
+			for the calculation.</dd>
+			<br /><br />
+			
+			<dt>firstDayOfWeek</dt>
+			<dd>Optional.  Constant that specifies the day of the week.  If not 
+			specified, Sunday is assumed.  See Settings section for values.</dd>
+			<br /><br />
+			
+			<dt>calendar</dt>
+			<dd>Optional.  A <b>CustomCalendar</b> object used to define the 
+			holidays (non-working weekdays) between the two dates.  This is 
+			used when calculating the number of workdays between the two dates.  
+			If omitted, a generic calendar containing no holidays is used.</dd>
+			<br /><br />
+			</dl>
+			
+			
+			<br />
+			<h4>Settings</h4>
+			The <i>interval</i> argument can have the following values:
+			
+			<table width="100%">
+				<tr>
+					<td class="tableHead">Setting</td>
+					<td class="tableHead">Description</td>
+				</tr>
+				<tr>
+					<td class="tableData">y or year</td>
+					<td class="tableData">Year</td>
+				</tr>
+				<tr>
+					<td class="tableData">q or quarter</td>
+					<td class="tableData">Quarter</td>
+				</tr>
+				<tr>
+					<td class="tableData">m or month</td>
+					<td class="tableData">Month</td>
+				</tr>
+				<tr>
+					<td class="tableData">w or week</td>
+					<td class="tableData">Week</td>
+				</tr>
+				<tr>
+					<td class="tableData">ww or calweek</td>
+					<td class="tableData">Calendar week</td>
+				</tr>
+				<tr>
+					<td class="tableData">wd or workday</td>
+					<td class="tableData">Working day</td>
+				</tr>
+				<tr>
+					<td class="tableData">d or day</td>
+					<td class="tableData">Day</td>
+				</tr>
+				<tr>
+					<td class="tableData">h or hour</td>
+					<td class="tableData">Hour</td>
+				</tr>
+				<tr>
+					<td class="tableData">n or minute</td>
+					<td class="tableData">Minute</td>
+				</tr>
+				<tr>
+					<td class="tableData">s or second</td>
+					<td class="tableData">Second</td>
+				</tr>
+			</table>
+			<br /><br />
+			
+			The <i>firstdayofweek</i> argument can have the following values:
+			<table width="100%">
+				<tr>
+					<td class="tableHead">Value</td>
+					<td class="tableHead">Description</td>
+				</tr>
+				<tr>
+					<td class="tableData">0</td>
+					<td class="tableData">Sunday (default)</td>
+				</tr>
+				<tr>
+					<td class="tableData">1</td>
+					<td class="tableData">Monday</td>
+				</tr>
+				<tr>
+					<td class="tableData">2</td>
+					<td class="tableData">Tuesday</td>
+				</tr>
+				<tr>
+					<td class="tableData">3</td>
+					<td class="tableData">Wednesday</td>
+				</tr>
+				<tr>
+					<td class="tableData">4</td>
+					<td class="tableData">Thursday</td>
+				</tr>
+				<tr>
+					<td class="tableData">5</td>
+					<td class="tableData">Friday</td>
+				</tr>
+				<tr>
+					<td class="tableData">6</td>
+					<td class="tableData">Saturday</td>
+				</tr>
+			</table>
+			
+			
+			<br />
+			<h4>Return Value</h4>
+			The <b>Date.dateDiff</b> method returns the number of intervals between two dates.
+			
+			
+			<br />
+			<h4>Remarks</h4>
+			<p>You can use the <b>Date.dateDiff</b> method to determine how many 
+			specified time intervals exist between two dates.  For example, you 
+			might use <b>Date.dateDiff</b> to calculate the number of days 
+			between two dates, or the number of weeks between today and the 
+			end of the year.</p>
+			<p>To calculate the number of days between date1 (<i>object</i>) and 
+			date2 (<i>toDate</i>), use Day ("d").  When interval is Weekday ("w"), 
+			<b>Date.dateDiff</b> returns the number of weeks between the two dates.  
+			Use <i>firstdayofweek</i> to choose where to set the week boundary.</p>
+			<p>If date1 refers to a later point in time than date2, the <b>Date.dateDiff</b> 
+			method returns a negative number.</p>
+			<p>When comparing December 31 to January 1 of the immediately succeeding year, 
+			<b>Date.dateDiff</b> for Year ("y") returns 1 even though only a day has elapsed.</p>
+			<p>The following example uses the <b>Date.dateDiff</b> method to display the number 
+			of days between a given date and today:</p>
+			<br /><br />
+			
+			<pre>Console.Writeln((new Date("11/20/2009")).dateDiff("w", new Date("11/28/2009"), 6));		<font color="888888">//	returns 2</font>
+Console.Writeln((new Date("11/20/2009")).dateDiff("w", new Date("11/28/2009"), 5));		<font color="888888">//	returns 1</font>
+var oCCal = new CustomCalendar();
+oCCal.Add(new Date("11/26/2009"));
+oCCal.Add(new Date("11/27/2009"));
+Console.Writeln((new Date("11/20/2009")).dateDiff("d", new Date("11/28/2009"), 5));		<font color="888888">//	returns 8</font>
+Console.Writeln((new Date("11/20/2009")).dateDiff("wd", new Date("11/28/2009"), 5, oCCal));		<font color="888888">//	returns 3</font></pre>
+			
+			
+			<br /><br />
+			<h4>Requirements</h4>
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

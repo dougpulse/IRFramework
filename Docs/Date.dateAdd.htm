@@ -1,0 +1,147 @@
+<html>
+<head>
+<title>IR Framework:  Date.dateAdd Method</title>
+<link rel="stylesheet" type="text/css" href="scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>IR Framework</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>Date.dateAdd Method</h4>
+			
+			Returns the number of intervals between two dates.<br />
+			
+			<pre style="background-color: eef;
+				  border-bottom-style: solid;
+				  border-bottom-color: ccc;
+				  border-bottom-width: 1px;
+				  padding-left: 50px; "><i><b>object</b></i>.<b>dateAdd</b> (<i>interval</i>, <i>n</i>[, <i>calendar</i>])</pre>
+					
+			<br />string
+			<h4>Arguments</h4>
+			
+			<dl>
+			<dt>object</dt>
+			<dd>Required. Always the name of a <b>Date</b> object.  This is 
+			used as the beginning date for the calculation.</dd>
+			<br /><br />
+			
+			<dt>interval</dt>
+			<dd>Required. String expression that is the interval you want to 
+			use to calculate the differences between date1 and date2. See 
+			Settings section for values.</dd>
+			<br /><br />
+			
+			<dt>n</dt>
+			<dd>Required.  The number of interval you want to add. The numeric 
+			expression can either be positive, for dates in the future, or 
+			negative, for dates in the past.</dd>
+			<br /><br />
+			
+			<dt>calendar</dt>
+			<dd>Optional.  A <b>CustomCalendar</b> object used to define the 
+			holidays (non-working weekdays) between the two dates.  This is 
+			used when calculating the number of workdays between the two dates.  
+			If omitted, a generic calendar containing no holidays is used.</dd>
+			<br /><br />
+			</dl>
+			
+			
+			<br />
+			<h4>Settings</h4>
+			The <i>interval</i> argument can have the following values:
+			
+			<table width="100%">
+				<tr>
+					<td class="tableHead">Setting</td>
+					<td class="tableHead">Description</td>
+				</tr>
+				<tr>
+					<td class="tableData">y or year</td>
+					<td class="tableData">Year</td>
+				</tr>
+				<tr>
+					<td class="tableData">q or quarter</td>
+					<td class="tableData">Quarter</td>
+				</tr>
+				<tr>
+					<td class="tableData">m or month</td>
+					<td class="tableData">Month</td>
+				</tr>
+				<tr>
+					<td class="tableData">w or week</td>
+					<td class="tableData">Week</td>
+				</tr>
+				<!--tr>
+					<td class="tableData">ww or calweek</td>
+					<td class="tableData">Calendar week</td>
+				</tr-->
+				<tr>
+					<td class="tableData">wd or workday</td>
+					<td class="tableData">Working day</td>
+				</tr>
+				<tr>
+					<td class="tableData">d or day</td>
+					<td class="tableData">Day</td>
+				</tr>
+				<tr>
+					<td class="tableData">h or hour</td>
+					<td class="tableData">Hour</td>
+				</tr>
+				<tr>
+					<td class="tableData">n or minute</td>
+					<td class="tableData">Minute</td>
+				</tr>
+				<tr>
+					<td class="tableData">s or second</td>
+					<td class="tableData">Second</td>
+				</tr>
+			</table>
+			<br /><br />
+			
+			
+			<br />
+			<h4>Return Value</h4>
+			The <b>Date.dateAdd</b> method returns a date to which a specified time interval has been added.
+			
+			
+			<br />
+			<!-- h4>Remarks</h4>
+			<br /><br /-->
+			
+			<pre>var oCCal = new CustomCalendar();
+oCCal.Add(new Date("11/26/2009"));
+oCCal.Add(new Date("11/27/2009"));
+oCCal.Add(new Date("12/25/2009"));
+oCCal.Add(new Date("1/1/2010"));
+
+Console.Writeln((new Date("11/20/2009")).dateAdd("d", 30).format("mm/dd/yyyy"));   <font color="888888">//	returns 12/20/2009</font>
+Console.Writeln((new Date("11/20/2009")).dateAdd("wd", 30).format("mm/dd/yyyy"));  <font color="888888">//	returns 01/01/2010 because no calendar was given to define holidays</font>
+Console.Writeln((new Date("11/20/2009")).dateAdd("wd", 30, oCCal));                <font color="888888">//	returns 01/07/2010</font></pre>
+			
+			
+			<br /><br />
+			<h4>Requirements</h4>
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>
