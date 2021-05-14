@@ -1,0 +1,21 @@
+body, table	{font-family: tahoma; 
+		 font-size: x-small; }
+h4		{color: 008; }
+dt		{font-style: italic; }
+dd		{margin-left: 0px; }
+tr		{vertical-align: top; }
+td		{padding: 10px; }
+pre		{font-family: courier new; 
+		 color: 404; 
+		 font-size: x-small; }
+a		{text-decoration: none; }
+a:hover	{text-decoration: underline: }
+.tableHead	{font-weight: bold; 
+		 background-color: eef; 
+		 border-bottom-style: solid; 
+		 border-bottom-color: ccc; 
+		 border-bottom-width: 1px; }
+.tableData	{font-weight: normal; 
+		 border-bottom-style: solid; 
+		 border-bottom-color: ccc; 
+		 border-bottom-width: 1px; }

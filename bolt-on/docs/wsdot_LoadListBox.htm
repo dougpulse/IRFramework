@@ -1,0 +1,147 @@
+<html>
+<head>
+<title>WSDOT Custom Scripting:  wsdot_LoadListBox Function</title>
+<link rel="stylesheet" type="text/css" href="wsdot_scripts.css" />
+
+</head>
+
+<body style="font-family: tahoma; ">
+
+<h2>WSDOT Custom Scripting for Hyperion</h2>
+
+
+<table width="100%" height="90%" style="table-layout: fixed; ">
+	<tr valign="top">
+		<td style="width: 2.2in; ">
+			<iframe id="frScriptMenu" 
+					frameborder="0" 
+					height="100%" 
+					width="100%" 
+					src="menu.htm"></iframe>
+		</td>
+		<td>
+			<span id="spScriptInfo" style="height: 100%; width: 100%; overflow: auto; ">
+			<h4>wsdot_LoadListBox Function</h4>
+			
+			Loads information from a <b>Results</b> or <b>Table</b> column into a <b>ListBox</b> or <b>DropDown</b> control.<br />
+			
+			<pre style="background-color: eef; 
+				  color: 404; 
+				  border-bottom-style: solid; 
+				  border-bottom-color: ccc; 
+				  border-bottom-width: 1px; 
+				  padding-left: 50px; ">[<i><b>ActiveDocument</b></i>.]<b>wsdot_LoadListBox</b> (<i>DashboardName</i>, <i>ControlName</i>, <i>ResultListName</i>, <i>SourceColName</i>[, <i>FirstItem</i>[, <i>SortDescending</i>[, <i>SortColumn</i>]]])</pre>
+			
+			
+			<br />
+			<h4>Arguments</h4>
+			
+			<dl>
+			<dt>DashboardName</dt>
+			<dd>Required.  A string value containing the name of the <b>Dashboard</b> that 
+			contains the <b>Control</b> to load.</dd>
+			<br /><br />
+			
+			<dt>ControlName</dt>
+			<dd>Required.  A string value containing the name of the <b>Control</b> to load.  
+			The control must be a <b>ListBox</b> or <b>DropDown</b>.</dd>
+			<br /><br />
+			
+			<dt>ResultListName</dt>
+			<dd>Required.  A string value containing the name of the <b>Result</b> 
+			or <b>Table</b> section to load from.</dd>
+			<br /><br />
+			
+			<dt>SourceColName</dt>
+			<dd>Required.  A string value containing the name of the column in 
+			the <b>Result</b> or <b>Table</b> section to load from.</dd>
+			<br /><br />
+			
+			<dt>FirstItem</dt>
+			<dd>Optional.  A string value to place at the beginning of the list.  
+			If this value is omitted or a zero-length string (""), no additional 
+			item is added to the list.
+			<br /><br />
+			
+			<dt>SortDescending</dt>
+			<dd>Optional.  If true, the list is sorted in descending order.  
+			If false or omitted, the list is sorted in ascending order.</dd>
+			<br /><br />
+			
+			<dt>SortColumn</dt>
+			<dd>Optional.  A string value containing the name of the column in 
+			the <b>Result</b> or <b>Table</b> section that will be used for 
+			sorting.  If omitted, <i>SourceColName</i> is used.</dd>
+			<br /><br />
+			</dl>
+			
+			
+			<br />
+			<h4>Return Value</h4>
+			The <b>wsdot_LoadListBox</b> function returns the following values:
+			
+			<table width="100%">
+				<tr>
+					<td class="tableHead">If</td>
+					<td class="tableHead">wsdot_LoadListBox returns</td>
+				</tr>
+				<tr>
+					<td class="tableData"><i>DashboardName</i> is not the name of a <b>Dashboard</b> object.</td>
+					<td class="tableData">"<i>DashboardName</i> is not the name of a Dashboard object."</td>
+				</tr>
+				<tr>
+					<td class="tableData"><i>ControlName</i> is not the name of a 
+					<b>ListBox</b> or <b>DropDown</b> control in <i>DashboardName</i></td>
+					<td class="tableData">"<i>ControlName</i> is not the name of a ListBox 
+					or DropDown control in <i>DashboardName</i>"</td>
+				</tr>
+				<tr>
+					<td class="tableData"><i>ResultListName</i> is not the name of a 
+					<b>Results</b> or <b>Table</b> section in the <b>ActiveDocument</b></td>
+					<td class="tableData">"This document does not contain a Result or Table named <i>ResultListName</i>."</td>
+				</tr>
+				<tr>
+					<td class="tableData"><i>SourceColName</i> is not the name of a column in 
+					the <b>Results</b> or <b>Table</b> section named <i>ResultListName</i></td>
+					<td class="tableData">"<i>ResultListName</i> does not contain a column named <i>SourceColName</i>."</td>
+				</tr>
+				<tr>
+					<td class="tableData"><i>SortColumn</i> is provided and is not the name of a 
+					column in the <b>Results</b> or <b>Table</b> section named <i>ResultListName</i></td>
+					<td class="tableData">"<i>ResultListName</i> does not contain a column named <i>SortColumn</i>."</td>
+				</tr>
+				<tr>
+					<td class="tableData">All input is valid</td>
+					<td class="tableData">"Success"</td>
+				</tr>
+			</table>
+			
+			
+			<br />
+			<br />
+			<h4>Remarks</h4>
+			The following examples use <b>wsdot_LoadListBox</b> to populate a 
+			listbox control from a <b>Results</b> section:
+			<br />
+			<br />
+			
+			<pre>//	populate a <b>DropDown</b> from <b>Results</b>
+ActiveDocument.wsdot_LoadListBox("Dashboard", "drpOrgCode", "R-Organization", "Organization Code");
+
+//	populate a <b>ListBox</b> from <b>Results</b>, add a first item, and sort ascending by an alternate column.
+wsdot_LoadListBox("Dashboard", "lstSubpgm", "R-Subpgm", "Sub Program Name", "*** ALL ***", false, "Sub Program Code");
+</pre>
+			
+			<br />
+			<br />
+			<h4>Requirements</h4>
+			The WSDOT Custom Scripts from the script repository must be loaded into the document.
+			</span>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>
